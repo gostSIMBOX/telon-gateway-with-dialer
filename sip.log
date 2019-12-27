@@ -1,0 +1,714 @@
+r: b=AS:386
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: t=0 0
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=X-nat:0
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: m=audio 4000 RTP/AVP 98 97 99 104 3 0 8 9 113 114 115 116 117 120 96
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: b=TIAS:96000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtcp:4001 IN IP4 10.135.123.201
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:98 speex/16000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:97 speex/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:99 speex/32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:104 iLBC/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:104 mode=30
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:3 GSM/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:0 PCMU/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:8 PCMA/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:9 G722/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:113 G7221/16000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:113 bitrate=24000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:114 G7221/16000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:114 bitrate=32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:115 G7221/32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:115 bitrate=24000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:116 G7221/32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:116 bitrate=32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:117 G7221/32000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:117 bitrate=48000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:120 opus/48000/2
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:120 useinbandfec=1
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:96 telephone-event/8000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:96 0-16
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=ssrc:1388340309 cname:21ba304b5c60f1db
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=sendonly
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: m=video 4002 RTP/AVP 97
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: b=TIAS:256000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtcp:4003 IN IP4 10.135.123.201
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=rtpmap:97 H264/90000
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=ssrc:200446652 cname:21ba304b5c60f1db
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: a=sendonly
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter:
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: --end msg--
+12-18 13:20:40.084  9915  9980 D PjSipLogWriter: 13:20:40.084        tsx0x737f7f78a8  ....State changed from Null to Calling, event=TX_MSG
+12-18 13:20:40.085  9915  9980 D PjSipLogWriter: 13:20:40.085        dlg0x7c507fd0a8  .....Transaction tsx0x737f7f78a8 state changed to Calling
+12-18 13:20:40.089  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.handled" response from service ({"data":"{\"id\":1,\"callId\":\"0225ae16-333f-462f-a2c2-404dc5f19745\",\"accountId\":0,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_CALLING\",\"stateText\":\"CALLING\",\"connectDuration\":-1,\"totalDuration\":0,\"held\":false,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_NULL\",\"lastReason\":\"\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}","callback_id":6})
+12-18 13:20:40.135  9915 10262 D PjSipLogWriter: 13:20:40.134         sip_endpoint.c !Processing incoming message: Response msg 407/INVITE/cseq=15161 (rdata0x7c5068bb30)
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: 13:20:40.136           pjsua_core.c  .RX 556 bytes Response msg 407/INVITE/cseq=15161 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: SIP/2.0 407 Proxy Authentication Required
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPja86220ab-bf8e-4e2b-a1e7-328fef5cd63c;alias;received=176.59.15.222
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=7d3a6557-935f-4737-9a19-b57bd56a6155
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=6d8afd3ee9eed615c4ab8afe931d20cf.5af5
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: Call-ID: 0225ae16-333f-462f-a2c2-404dc5f19745
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: CSeq: 15161 INVITE
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: Proxy-Authenticate: Digest realm="sip.zadarma.com", nonce="Xfn+pV35/Xlp+umVbmR8RPswT1DBHZv1", qop="auth"
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.136  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.137  9915 10262 D PjSipLogWriter: 13:20:40.137        tsx0x737f7f70a8  .Incoming Response msg 407/INVITE/cseq=15161 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:40.138  9915 10262 D PjSipLogWriter: 13:20:40.137               endpoint  ..Request msg ACK/cseq=15161 (tdta0x737f3c10a8) created.
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: 13:20:40.138           pjsua_core.c  ..TX 409 bytes Request msg ACK/cseq=15161 (tdta0x737f3c10a8) to TCP 37.139.38.17:5060:
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: ACK sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPja86220ab-bf8e-4e2b-a1e7-328fef5cd63c;alias
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=7d3a6557-935f-4737-9a19-b57bd56a6155
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=6d8afd3ee9eed615c4ab8afe931d20cf.5af5
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: Call-ID: 0225ae16-333f-462f-a2c2-404dc5f19745
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: CSeq: 15161 ACK
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.139  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.140  9915 10262 D PjSipLogWriter: 13:20:40.139        tsx0x737f7f70a8  ..State changed from Calling to Completed, event=RX_MSG
+12-18 13:20:40.140  9915 10262 D PjSipLogWriter: 13:20:40.140        dlg0x7c40f8c0a8  ...Received Response msg 407/INVITE/cseq=15161 (rdata0x7c5068bb30)
+12-18 13:20:40.141  9915 10262 D PjSipLogWriter: 13:20:40.140        dlg0x7c40f8c0a8  ...Transaction tsx0x737f7f70a8 state changed to Completed
+12-18 13:20:40.141  9915 10262 D PjSipLogWriter: 13:20:40.141        inv0x7c40f8c0a8  .....Sending Request msg INVITE/cseq=15161 (tdta0x737f5ff0a8)
+12-18 13:20:40.142  9915 10262 D PjSipLogWriter: 13:20:40.142        dlg0x7c40f8c0a8  ......Sending Request msg INVITE/cseq=15161 (tdta0x737f5ff0a8)
+12-18 13:20:40.144  9915 10262 D PjSipLogWriter: 13:20:40.143        tsx0x737f3c70a8  .......Transaction created for Request msg INVITE/cseq=15162 (tdta0x737f5ff0a8)
+12-18 13:20:40.145  9915 10262 D PjSipLogWriter: 13:20:40.144        tsx0x737f3c70a8  ......Sending Request msg INVITE/cseq=15162 (tdta0x737f5ff0a8) in state Null
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: 13:20:40.145               endpoint  .......Request msg INVITE/cseq=15162 (tdta0x737f5ff0a8): skipping target resolution because address is already set
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: 13:20:40.146           pjsua_core.c  .......TX 2040 bytes Request msg INVITE/cseq=15162 (tdta0x737f5ff0a8) to TCP 37.139.38.17:5060:
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: INVITE sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj9bdc68ba-e41a-4917-92b6-3231bc46c48e;alias
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=7d3a6557-935f-4737-9a19-b57bd56a6155
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Contact: "MyUserName" <sip:50363@10.135.123.201:43396;ob>
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Call-ID: 0225ae16-333f-462f-a2c2-404dc5f19745
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: CSeq: 15162 INVITE
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Supported: replaces, 100rel, timer, norefersub
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Session-Expires: 1800
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Min-SE: 90
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: User-Agent: React Native PjSip (2.8)
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Proxy-Authorization: Digest username="50363", realm="sip.zadarma.com", nonce="Xfn+pV35/Xlp+umVbmR8RPswT1DBHZv1", uri="sip:50013@sip.zadarma.com", response="95c81b0a8046154a17e3d60927b80f9c", cnonce="783acb55-5bdb-4f50-9f1a-c99209a18e12", qop=auth, nc=00000001
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Content-Type: application/sdp
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: Content-Length:  1094
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: v=0
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: o=- 3785653240 3785653240 IN IP4 10.135.123.201
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: s=pjmedia
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: b=AS:386
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: t=0 0
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=X-nat:0
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: m=audio 4004 RTP/AVP 98 97 99 104 3 0 8 9 113 114 115 116 117 120 96
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: b=TIAS:96000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtcp:4005 IN IP4 10.135.123.201
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=sendrecv
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:98 speex/16000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:97 speex/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:99 speex/32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:104 iLBC/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:104 mode=30
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:3 GSM/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:0 PCMU/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:8 PCMA/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:9 G722/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:113 G7221/16000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:113 bitrate=24000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:114 G7221/16000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:114 bitrate=32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:115 G7221/32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:115 bitrate=24000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:116 G7221/32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:116 bitrate=32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:117 G7221/32000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:117 bitrate=48000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:120 opus/48000/2
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:120 useinbandfec=1
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:96 telephone-event/8000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:96 0-16
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=ssrc:1074233952 cname:65d089857d19bc82
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: m=video 4006 RTP/AVP 97
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: b=TIAS:256000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtcp:4007 IN IP4 10.135.123.201
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=sendrecv
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=rtpmap:97 H264/90000
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: a=ssrc:820658728 cname:65d089857d19bc82
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.146  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.147  9915 10262 D PjSipLogWriter: 13:20:40.147        tsx0x737f3c70a8  .......State changed from Null to Calling, event=TX_MSG
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: 13:20:40.147        dlg0x7c40f8c0a8  ........Transaction tsx0x737f3c70a8 state changed to Calling
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: 13:20:40.148         sip_endpoint.c  Processing incoming message: Response msg 100/INVITE/cseq=25016 (rdata0x7c5068bb30)
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: 13:20:40.148           pjsua_core.c  .RX 432 bytes Response msg 100/INVITE/cseq=25016 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: SIP/2.0 100 trying -- your call is important to us
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPjc4c00e74-64d3-4d4a-b41d-361e9d1ced71;alias;received=176.59.15.222
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=8902b250-e27e-4f3a-a00e-6f5af76e4a22
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as71a6927e
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: Call-ID: 83a3a37d-3c89-45c7-951f-89dd8fe2d4f2
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: CSeq: 25016 INVITE
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.148  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.149  9915 10262 D PjSipLogWriter: 13:20:40.149        tsx0x737f7f78a8  .Incoming Response msg 100/INVITE/cseq=25016 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:40.149  9915 10262 D PjSipLogWriter: 13:20:40.149        tsx0x737f7f78a8  ..State changed from Calling to Proceeding, event=RX_MSG
+12-18 13:20:40.149  9915 10262 D PjSipLogWriter: 13:20:40.149        dlg0x7c507fd0a8  ...Received Response msg 100/INVITE/cseq=25016 (rdata0x7c5068bb30)
+12-18 13:20:40.149  9915 10262 D PjSipLogWriter: 13:20:40.149        dlg0x7c507fd0a8  ...Transaction tsx0x737f7f78a8 state changed to Proceeding
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: 13:20:40.150         sip_endpoint.c  Processing incoming message: Response msg 481/INVITE/cseq=25016 (rdata0x7c5068bb30)
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: 13:20:40.150           pjsua_core.c  .RX 543 bytes Response msg 481/INVITE/cseq=25016 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: SIP/2.0 481 Call/Transaction Does Not Exist
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;received=176.59.15.222;rport=43498;branch=z9hG4bKPjc4c00e74-64d3-4d4a-b41d-361e9d1ced71;alias
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=8902b250-e27e-4f3a-a00e-6f5af76e4a22
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as71a6927e
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Call-ID: 83a3a37d-3c89-45c7-951f-89dd8fe2d4f2
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: CSeq: 25016 INVITE
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Server: Zadarma Voip
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Supported: replaces, timer
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: 13:20:40.150        tsx0x737f7f78a8  .Incoming Response msg 481/INVITE/cseq=25016 (rdata0x7c5068bb30) in state Proceeding
+12-18 13:20:40.150  9915 10262 D PjSipLogWriter: 13:20:40.150               endpoint  ..Request msg ACK/cseq=25016 (tdta0x737f3c90a8) created.
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: 13:20:40.151           pjsua_core.c  ..TX 570 bytes Request msg ACK/cseq=25016 (tdta0x737f3c90a8) to TCP 37.139.38.17:5060:
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: ACK sip:50013@37.139.38.26:5060 SIP/2.0
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPjc4c00e74-64d3-4d4a-b41d-361e9d1ced71;alias
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=8902b250-e27e-4f3a-a00e-6f5af76e4a22
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as71a6927e
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Call-ID: 83a3a37d-3c89-45c7-951f-89dd8fe2d4f2
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: CSeq: 25016 ACK
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Route: <sip:37.139.38.17;transport=tcp;lr;r2=on;ftag=8902b250-e27e-4f3a-a00e-6f5af76e4a22;nat=yes>
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Route: <sip:37.139.38.17;lr;r2=on;ftag=8902b250-e27e-4f3a-a00e-6f5af76e4a22;nat=yes>
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter:
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: 13:20:40.151        tsx0x737f7f78a8  ..State changed from Proceeding to Completed, event=RX_MSG
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: 13:20:40.151        dlg0x7c507fd0a8  ...Received Response msg 481/INVITE/cseq=25016 (rdata0x7c5068bb30)
+12-18 13:20:40.151  9915 10262 D PjSipLogWriter: 13:20:40.151        dlg0x7c507fd0a8  ...Transaction tsx0x737f7f78a8 state changed to Completed
+12-18 13:20:40.157  9915 10262 D PjSipLogWriter: 13:20:40.156          pjsua_media.c  .....Call 0: deinitializing media..
+12-18 13:20:40.161  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.call.terminated" response from service ({"data":"{\"id\":0,\"callId\":\"83a3a37d-3c89-45c7-951f-89dd8fe2d4f2\",\"accountId\":1,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\u003csip:50013@37.139.38.26:5060\u003e\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_DISCONNECTED\",\"stateText\":\"DISCONNCTD\",\"connectDuration\":260,\"totalDuration\":293,\"held\":true,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_CALL_TSX_DOES_NOT_EXIST\",\"lastReason\":\"Call\\/Transaction Does Not Exist\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[{\"dir\":\"PJMEDIA_DIR_ENCODING_DECODING\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_ACTIVE\",\"audioStream\":{\"confSlot\":1},\"videoStream\":{\"captureDevice\":1,\"windowId\":0}},{\"dir\":\"PJMEDIA_DIR_ENCODING_DECODING\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_ACTIVE\",\"audioStream\":{\"confSlot\":1},\"videoStream\":{\"captureDevice\":1,\"windowId\":0}}],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_ENCODING_DECODING\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_ACTIVE\",\"audioStream\":{\"confSlot\":1},\"videoStream\":{\"captureDevice\":1,\"windowId\":0}},{\"dir\":\"PJMEDIA_DIR_ENCODING_DECODING\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_ACTIVE\",\"audioStream\":{\"confSlot\":1},\"videoStream\":{\"captureDevice\":1,\"windowId\":0}}]}"})
+12-18 13:20:40.161  9915 10262 D PjSipLogWriter: 13:20:40.160       strm0x7c507d1828  .......JB summary:
+12-18 13:20:40.161  9915 10262 D PjSipLogWriter:   size=0/eff=0 prefetch=0 level=6
+12-18 13:20:40.161  9915 10262 D PjSipLogWriter:   delay (min/max/avg/dev)=30/500/165/126 ms
+12-18 13:20:40.161  9915 10262 D PjSipLogWriter:   burst (min/max/avg/dev)=2/10/3/1 frames
+12-18 13:20:40.161  9915 10262 D PjSipLogWriter:   lost=40 discard=58 empty=11896
+12-18 13:20:40.162  9915 10262 D PjSipLogWriter: 13:20:40.161          pjsua_media.c  .......Media stream call00:0 is destroyed
+12-18 13:20:40.163  9915 10262 D PjSipLogWriter: 13:20:40.162            pjsua_vid.c  .......Stopping video stream..
+12-18 13:20:40.169  9915  9915 D PjSipBroadcastReceiver: emit pjSipCallTerminated / { NativeMap: {"media":[{"videoStream":{"windowId":0,"captureDevice":1},"audioStream":{"confSlot":1},"status":"PJSUA_CALL_MEDIA_ACTIVE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_ENCODING_DECODING"},{"videoStream":{"windowId":0,"captureDevice":1},"audioStream":{"confSlot":1},"status":"PJSUA_CALL_MEDIA_ACTIVE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_ENCODING_DECODING"}],"audioCount":1,"remoteAudioCount":0,"lastReason":"Call/Transaction Does Not Exist","speaker":false,"held":true,"state":"PJSIP_INV_STATE_DISCONNECTED","remoteUri":"sip:50013@sip.zadarma.com","localContact":"\"MyUserName\" <sip:50363@10.135.123.201:43396;ob>","id":0,"provisionalMedia":[{"videoStream":{"windowId":0,"captureDevice":1},"audioStream":{"confSlot":1},"status":"PJSUA_CALL_MEDIA_ACTIVE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_ENCODING_DECODING"},{"videoStream":{"windowId":0,"captureDevice":1},"audioStream":{"confSlot":1},"status":"PJSUA_CALL_MEDIA_ACTIVE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_ENCODING_DECODING"}],"videoCount":1,"remoteVideoCount":0,"remoteOfferer":false,"lastStatusCode":"PJSIP_SC_CALL_TSX_DOES_NOT_EXIST","muted":false,"totalDuration":293,"connectDuration":260,"stateText":"DISCONNCTD","remoteContact":"<sip:50013@37.139.38.26:5060>","localUri":"MyUserName <sip:50363@sip.zadarma.com>","accountId":1,"callId":"83a3a37d-3c89-45c7-951f-89dd8fe2d4f2"} }
+12-18 13:20:40.194  9915 10262 D PjSipLogWriter: 13:20:40.194          android_dev.c  ........Stopping Android camera stream
+12-18 13:20:41.067  9915 10262 D PjSipLogWriter: 13:20:41.066            pjsua_vid.c  ........Window 1: destroying..
+12-18 13:20:41.067  9915 10262 D PjSipLogWriter: 13:20:41.067          android_dev.c  .........Stopping Android camera stream
+12-18 13:20:41.068  9915 10262 D PjSipLogWriter: 13:20:41.068             vid_port.c  .........Closing Front camera..
+12-18 13:20:41.069  9915 10262 D PjSipLogWriter: 13:20:41.069          android_dev.c  .........Android camera stream destroyed
+12-18 13:20:41.069  9915 10262 D PjSipLogWriter: 13:20:41.069     android_opengl.cpp  .........Stopping Android opengl stream
+12-18 13:20:41.069  9915 10262 D PjSipLogWriter: 13:20:41.069             vid_port.c  .........Closing OpenGL renderer..
+12-18 13:20:41.070  9915 10262 D PjSipLogWriter: 13:20:41.069     android_opengl.cpp  .........Stopping Android opengl stream
+12-18 13:20:41.116  9915 10262 D PjSipLogWriter: 13:20:41.115     android_opengl.cpp  ........Stopping Android opengl stream
+12-18 13:20:41.117  9915 10262 D PjSipLogWriter: 13:20:41.116            pjsua_vid.c  ........Window 0: destroying..
+12-18 13:20:41.118  9915 10262 D PjSipLogWriter: 13:20:41.117     android_opengl.cpp  .........Stopping Android opengl stream
+12-18 13:20:41.118  9915 10262 D PjSipLogWriter: 13:20:41.118             vid_port.c  .........Closing OpenGL renderer..
+12-18 13:20:41.118  9915 10262 D PjSipLogWriter: 13:20:41.118     android_opengl.cpp  .........Stopping Android opengl stream
+12-18 13:20:41.133  9915 10262 D PjSipLogWriter: 13:20:41.132     vstdec0x7c507f3828  ........JB summary:
+12-18 13:20:41.133  9915 10262 D PjSipLogWriter:   size=0/eff=0 prefetch=0 level=0
+12-18 13:20:41.133  9915 10262 D PjSipLogWriter:   delay (min/max/avg/dev)=0/0/0/0 ms
+12-18 13:20:41.133  9915 10262 D PjSipLogWriter:   burst (min/max/avg/dev)=0/0/0/0 frames
+12-18 13:20:41.133  9915 10262 D PjSipLogWriter:   lost=0 discard=0 empty=0
+12-18 13:20:41.134  9915 10262 D PjSipLogWriter: 13:20:41.133          pjsua_media.c  .......Media stream call00:1 is destroyed
+12-18 13:20:41.134  9915 10262 D PjSipLogWriter: 13:20:41.134       tdta0x737f9ff0a8  ....Destroying txdata Request msg ACK/cseq=25015 (tdta0x737f9ff0a8)
+12-18 13:20:41.135  9915 10262 D PjSipLogWriter: 13:20:41.134       tdta0x7c40f890a8  ....Destroying txdata Request msg INVITE/cseq=25014 (tdta0x7c40f890a8)
+12-18 13:20:41.135  9915 10262 D PjSipLogWriter: 13:20:41.135        dlg0x7c507fd0a8  .....Session count dec to 1 by mod-invite
+12-18 13:20:41.136  9915 10262 D PjSipLogWriter: 13:20:41.136               endpoint  ....Request msg BYE/cseq=25018 (tdta0x7c507f10a8) created.
+12-18 13:20:41.136  9915 10262 D PjSipLogWriter: 13:20:41.136        inv0x7c507fd0a8  .....Sending Request msg BYE/cseq=25018 (tdta0x7c507f10a8)
+12-18 13:20:41.137  9915 10262 D PjSipLogWriter: 13:20:41.137        dlg0x7c507fd0a8  ......Sending Request msg BYE/cseq=25018 (tdta0x7c507f10a8)
+12-18 13:20:41.139  9915 10262 D PjSipLogWriter: 13:20:41.138        tsx0x7c507fd8a8  .......Transaction created for Request msg BYE/cseq=25017 (tdta0x7c507f10a8)
+12-18 13:20:41.142  9915 10262 D PjSipLogWriter: 13:20:41.140        tsx0x7c507fd8a8  ......Sending Request msg BYE/cseq=25017 (tdta0x7c507f10a8) in state Null
+12-18 13:20:41.144  9915 10262 D PjSipLogWriter: 13:20:41.143          sip_resolve.c  .......Target '37.139.38.17:0' type=TCP resolved to '37.139.38.17:5060' type=TCP (TCP transport)
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: 13:20:41.144           pjsua_core.c  .......TX 570 bytes Request msg BYE/cseq=25017 (tdta0x7c507f10a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: BYE sip:50013@37.139.38.26:5060 SIP/2.0
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj3edd1379-e4de-4b8e-8637-992c2f6eb41d;alias
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=8902b250-e27e-4f3a-a00e-6f5af76e4a22
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as71a6927e
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Call-ID: 83a3a37d-3c89-45c7-951f-89dd8fe2d4f2
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: CSeq: 25017 BYE
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Route: <sip:37.139.38.17;transport=tcp;lr;r2=on;ftag=8902b250-e27e-4f3a-a00e-6f5af76e4a22;nat=yes>
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Route: <sip:37.139.38.17;lr;r2=on;ftag=8902b250-e27e-4f3a-a00e-6f5af76e4a22;nat=yes>
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.145  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.146  9915 10262 D PjSipLogWriter: 13:20:41.146        tsx0x7c507fd8a8  .......State changed from Null to Calling, event=TX_MSG
+12-18 13:20:41.147  9915 10262 D PjSipLogWriter: 13:20:41.146        dlg0x7c507fd0a8  ........Transaction tsx0x7c507fd8a8 state changed to Calling
+12-18 13:20:41.147  9915 10262 D PjSipLogWriter: 13:20:41.147       tdta0x737f7ff0a8  ..Destroying txdata Request msg INVITE/cseq=25016 (tdta0x737f7ff0a8)
+12-18 13:20:41.148  9915 10262 D PjSipLogWriter: 13:20:41.148         sip_endpoint.c  Processing incoming message: Response msg 100/INVITE/cseq=15162 (rdata0x7c5068bb30)
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: 13:20:41.148           pjsua_core.c  .RX 417 bytes Response msg 100/INVITE/cseq=15162 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: SIP/2.0 100 trying -- your call is important to us
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPj9bdc68ba-e41a-4917-92b6-3231bc46c48e;alias;received=176.59.15.222
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=7d3a6557-935f-4737-9a19-b57bd56a6155
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: Call-ID: 0225ae16-333f-462f-a2c2-404dc5f19745
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: CSeq: 15162 INVITE
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.149  9915 10262 D PjSipLogWriter: 13:20:41.149        tsx0x737f3c70a8  .Incoming Response msg 100/INVITE/cseq=15162 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.150  9915 10262 D PjSipLogWriter: 13:20:41.149        tsx0x737f3c70a8  ..State changed from Calling to Proceeding, event=RX_MSG
+12-18 13:20:41.152  9915 10262 D PjSipLogWriter: 13:20:41.150        dlg0x7c40f8c0a8  ...Received Response msg 100/INVITE/cseq=15162 (rdata0x7c5068bb30)
+12-18 13:20:41.152  9915 10262 D PjSipLogWriter: 13:20:41.152        dlg0x7c40f8c0a8  ...Transaction tsx0x737f3c70a8 state changed to Proceeding
+12-18 13:20:41.154  9915 10262 D PjSipLogWriter: 13:20:41.153        tsx0x737f7f70a8  Timeout timer event
+12-18 13:20:41.154  9915 10262 D PjSipLogWriter: 13:20:41.154        tsx0x737f7f70a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.155  9915 10262 D PjSipLogWriter: 13:20:41.154        dlg0x7c40f8c0a8  ..Transaction tsx0x737f7f70a8 state changed to Terminated
+12-18 13:20:41.158  9915 10262 D PjSipLogWriter: 13:20:41.158               endpoint  Request msg REGISTER/cseq=56016 (tdta0x737f7f90a8) created.
+12-18 13:20:41.160  9915 10262 D PjSipLogWriter: 13:20:41.159        tsx0x7c40f8c8a8  .Transaction created for Request msg REGISTER/cseq=56017 (tdta0x737f7f90a8)
+12-18 13:20:41.161  9915 10262 D PjSipLogWriter: 13:20:41.160        tsx0x7c40f8c8a8  Sending Request msg REGISTER/cseq=56017 (tdta0x737f7f90a8) in state Null
+12-18 13:20:41.163  9915 10262 D PjSipLogWriter: 13:20:41.162          sip_resolve.c  .DNS resolver not available, target 'sip.zadarma.com:0' type=TCP will be resolved with getaddrinfo()
+12-18 13:20:41.175  9915 10262 D PjSipLogWriter: 13:20:41.174          sip_resolve.c  .Target 'sip.zadarma.com:0' type=TCP resolved to '37.139.38.17:5060' type=TCP (TCP transport)
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: 13:20:41.175           pjsua_core.c  .TX 595 bytes Request msg REGISTER/cseq=56017 (tdta0x737f7f90a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: REGISTER sip:sip.zadarma.com SIP/2.0
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPje886c86b-47c7-423b-998d-0e5e75a9a08b;alias
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=aeec08c8-1e68-42dd-8259-3c8a9e4c615e
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: To: "MyUserName" <sip:50363@sip.zadarma.com>
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Call-ID: aaef430f-ad0c-4e9a-99d3-6abb8ccf5b1b
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: CSeq: 56017 REGISTER
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: User-Agent: React Native PjSip (2.8)
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Contact: "MyUserName" <sip:50363@10.135.123.201:43396;ob>
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Expires: 300
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: 13:20:41.176        tsx0x7c40f8c8a8  .State changed from Null to Calling, event=TX_MSG
+12-18 13:20:41.176  9915 10262 D PjSipLogWriter: 13:20:41.176        tsx0x737f7f78a8  Timeout timer event
+12-18 13:20:41.177  9915 10262 D PjSipLogWriter: 13:20:41.176        tsx0x737f7f78a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.177  9915 10262 D PjSipLogWriter: 13:20:41.177        dlg0x7c507fd0a8  ..Transaction tsx0x737f7f78a8 state changed to Terminated
+12-18 13:20:41.181  9915 10262 D PjSipLogWriter: 13:20:41.180        tsx0x737f7f70a8  Timeout timer event
+12-18 13:20:41.181  9915 10262 D PjSipLogWriter: 13:20:41.181        tsx0x737f7f70a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.182  9915 10262 D PjSipLogWriter: 13:20:41.181       tdta0x737f3c10a8  ..Destroying txdata Request msg ACK/cseq=15161 (tdta0x737f3c10a8)
+12-18 13:20:41.182  9915 10262 D PjSipLogWriter: 13:20:41.182        tsx0x737f7f70a8  Transaction destroyed!
+12-18 13:20:41.182  9915 10262 D PjSipLogWriter: 13:20:41.182        tsx0x737f7f78a8  Timeout timer event
+12-18 13:20:41.182  9915 10262 D PjSipLogWriter: 13:20:41.182        tsx0x737f7f78a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.183  9915 10262 D PjSipLogWriter: 13:20:41.183       tdta0x737f3c90a8  ..Destroying txdata Request msg ACK/cseq=25016 (tdta0x737f3c90a8)
+12-18 13:20:41.183  9915 10262 D PjSipLogWriter: 13:20:41.183        tsx0x737f7f78a8  Transaction destroyed!
+12-18 13:20:41.226  9915 10262 D PjSipLogWriter: 13:20:41.225         sip_endpoint.c  Processing incoming message: Response msg 481/BYE/cseq=25017 (rdata0x7c5068bb30)
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: 13:20:41.227           pjsua_core.c  .RX 545 bytes Response msg 481/BYE/cseq=25017 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: SIP/2.0 481 Call leg/transaction does not exist
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;received=10.135.123.201;rport=43498;branch=z9hG4bKPj3edd1379-e4de-4b8e-8637-992c2f6eb41d;alias
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=8902b250-e27e-4f3a-a00e-6f5af76e4a22
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as71a6927e
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Call-ID: 83a3a37d-3c89-45c7-951f-89dd8fe2d4f2
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: CSeq: 25017 BYE
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Server: Zadarma Voip
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Supported: replaces, timer
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.227  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.228  9915 10262 D PjSipLogWriter: 13:20:41.227        tsx0x7c507fd8a8  .Incoming Response msg 481/BYE/cseq=25017 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.228  9915 10262 D PjSipLogWriter: 13:20:41.228        tsx0x7c507fd8a8  ..State changed from Calling to Completed, event=RX_MSG
+12-18 13:20:41.228  9915 10262 D PjSipLogWriter: 13:20:41.228        dlg0x7c507fd0a8  ...Received Response msg 481/BYE/cseq=25017 (rdata0x7c5068bb30)
+12-18 13:20:41.228  9915 10262 D PjSipLogWriter: 13:20:41.228        dlg0x7c507fd0a8  ...Transaction tsx0x7c507fd8a8 state changed to Completed
+12-18 13:20:41.229  9915 10262 D PjSipLogWriter: 13:20:41.228        tsx0x7c507fd8a8  Timeout timer event
+12-18 13:20:41.229  9915 10262 D PjSipLogWriter: 13:20:41.229        tsx0x7c507fd8a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.229  9915 10262 D PjSipLogWriter: 13:20:41.229        dlg0x7c507fd0a8  ..Transaction tsx0x7c507fd8a8 state changed to Terminated
+12-18 13:20:41.230  9915 10262 D PjSipLogWriter: 13:20:41.230        dlg0x7c507fd0a8  ...Dialog destroyed
+12-18 13:20:41.234  9915 10262 D PjSipLogWriter: 13:20:41.233        tsx0x7c507fd8a8  Timeout timer event
+12-18 13:20:41.235  9915 10262 D PjSipLogWriter: 13:20:41.235        tsx0x7c507fd8a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.235  9915 10262 D PjSipLogWriter: 13:20:41.235       tdta0x7c507f10a8  ..Destroying txdata Request msg BYE/cseq=25017 (tdta0x7c507f10a8)
+12-18 13:20:41.236  9915 10262 D PjSipLogWriter: 13:20:41.236        tsx0x7c507fd8a8  Transaction destroyed!
+12-18 13:20:41.255  9915 10262 D PjSipLogWriter: 13:20:41.254         sip_endpoint.c  Processing incoming message: Response msg 401/REGISTER/cseq=56017 (rdata0x7c5068bb30)
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: 13:20:41.255           pjsua_core.c  .RX 555 bytes Response msg 401/REGISTER/cseq=56017 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: SIP/2.0 401 Unauthorized
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPje886c86b-47c7-423b-998d-0e5e75a9a08b;alias;received=10.135.123.201
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=aeec08c8-1e68-42dd-8259-3c8a9e4c615e
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: To: "MyUserName" <sip:50363@sip.zadarma.com>;tag=6d8afd3ee9eed615c4ab8afe931d20cf.afff
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: Call-ID: aaef430f-ad0c-4e9a-99d3-6abb8ccf5b1b
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: CSeq: 56017 REGISTER
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: WWW-Authenticate: Digest realm="sip.zadarma.com", nonce="Xfn+pl35/Xq8bNWhOr6g2LsJnm6NvG7A", qop="auth"
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.256  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.257  9915 10262 D PjSipLogWriter: 13:20:41.256        tsx0x7c40f8c8a8  .Incoming Response msg 401/REGISTER/cseq=56017 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.258  9915 10262 D PjSipLogWriter: 13:20:41.257        tsx0x7c40f8c8a8  ..State changed from Calling to Completed, event=RX_MSG
+12-18 13:20:41.263  9915 10262 D PjSipLogWriter: 13:20:41.261        tsx0x737f3c78a8  ....Transaction created for Request msg REGISTER/cseq=56018 (tdta0x737f7f90a8)
+12-18 13:20:41.266  9915 10262 D PjSipLogWriter: 13:20:41.265        tsx0x737f3c78a8  ...Sending Request msg REGISTER/cseq=56018 (tdta0x737f7f90a8) in state Null
+12-18 13:20:41.267  9915 10262 D PjSipLogWriter: 13:20:41.267               endpoint  ....Request msg REGISTER/cseq=56018 (tdta0x737f7f90a8): skipping target resolution because address is already set
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: 13:20:41.267           pjsua_core.c  ....TX 844 bytes Request msg REGISTER/cseq=56018 (tdta0x737f7f90a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: REGISTER sip:sip.zadarma.com SIP/2.0
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj3f7e1aaf-7588-4576-abf7-f310934ca1d0;alias
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=aeec08c8-1e68-42dd-8259-3c8a9e4c615e
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: To: "MyUserName" <sip:50363@sip.zadarma.com>
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Call-ID: aaef430f-ad0c-4e9a-99d3-6abb8ccf5b1b
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: CSeq: 56018 REGISTER
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: User-Agent: React Native PjSip (2.8)
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Contact: "MyUserName" <sip:50363@10.135.123.201:43396;ob>
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Expires: 300
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Authorization: Digest username="50363", realm="sip.zadarma.com", nonce="Xfn+pl35/Xq8bNWhOr6g2LsJnm6NvG7A", uri="sip:sip.zadarma.com", response="0e95cb5ecad5ababe0040856cdb03929", cnonce="af685c87-6ceb-41e4-bca2-503f21faf49b", qop=auth, nc=00000001
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.268  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.269  9915 10262 D PjSipLogWriter: 13:20:41.268        tsx0x737f3c78a8  ....State changed from Null to Calling, event=TX_MSG
+12-18 13:20:41.270  9915 10262 D PjSipLogWriter: 13:20:41.269        tsx0x7c40f8c8a8  Timeout timer event
+12-18 13:20:41.270  9915 10262 D PjSipLogWriter: 13:20:41.270        tsx0x7c40f8c8a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.272  9915 10262 D PjSipLogWriter: 13:20:41.271        tsx0x7c40f8c8a8  Timeout timer event
+12-18 13:20:41.273  9915 10262 D PjSipLogWriter: 13:20:41.272        tsx0x7c40f8c8a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.273  9915 10262 D PjSipLogWriter: 13:20:41.273        tsx0x7c40f8c8a8  Transaction destroyed!
+12-18 13:20:41.403  9915 10262 D PjSipLogWriter: 13:20:41.401         sip_endpoint.c  Processing incoming message: Response msg 200/REGISTER/cseq=56018 (rdata0x7c5068bb30)
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: 13:20:41.403           pjsua_core.c  .RX 499 bytes Response msg 200/REGISTER/cseq=56018 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: SIP/2.0 200 OK
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPj3f7e1aaf-7588-4576-abf7-f310934ca1d0;alias;received=10.135.123.201
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=aeec08c8-1e68-42dd-8259-3c8a9e4c615e
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: To: "MyUserName" <sip:50363@sip.zadarma.com>;tag=6d8afd3ee9eed615c4ab8afe931d20cf.0dbf
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: Call-ID: aaef430f-ad0c-4e9a-99d3-6abb8ccf5b1b
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: CSeq: 56018 REGISTER
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: Contact: <sip:50363@10.135.123.201:43396;ob>;expires=300
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.404  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.405  9915 10262 D PjSipLogWriter: 13:20:41.404        tsx0x737f3c78a8  .Incoming Response msg 200/REGISTER/cseq=56018 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.405  9915 10262 D PjSipLogWriter: 13:20:41.405        tsx0x737f3c78a8  ..State changed from Calling to Completed, event=RX_MSG
+12-18 13:20:41.406  9915 10262 D PjSipLogWriter: 13:20:41.406            pjsua_acc.c  ....SIP outbound status for acc 1 is not active
+12-18 13:20:41.407  9915 10262 D PjSipLogWriter: 13:20:41.406            pjsua_acc.c  ....MyUserName <sip:50363@sip.zadarma.com>: registration success, status=200 (OK), will re-register in 300 seconds
+12-18 13:20:41.418  9915 10262 D PjSipLogWriter: 13:20:41.416        tsx0x737f3c78a8  Timeout timer event
+12-18 13:20:41.420  9915 10262 D PjSipLogWriter: 13:20:41.419        tsx0x737f3c78a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.429  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.registration.changed" response from service ({"data":"{\"id\":1,\"uri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"name\":\"MyUserName\",\"username\":\"50363\",\"domain\":\"sip.zadarma.com\",\"password\":\"Password50363\",\"transport\":\"udp\",\"regTimeout\":\"600\",\"regHeaders\":\"{}\",\"regOnAdd\":true,\"registration\":{\"status\":\"PJSIP_SC_OK\",\"statusText\":\"OK\",\"active\":true,\"reason\":\"OK\"}}"})
+12-18 13:20:41.433  9915 10262 D PjSipLogWriter: 13:20:41.431        tsx0x737f3c78a8  Timeout timer event
+12-18 13:20:41.434  9915  9915 D PjSipBroadcastReceiver: emit pjSipRegistrationChanged / { NativeMap: {"registration":{"reason":"OK","active":true,"statusText":"OK","status":"PJSIP_SC_OK"},"regOnAdd":true,"regHeaders":"{}","regTimeout":"600","transport":"udp","password":"Password50363","domain":"sip.zadarma.com","username":"50363","name":"MyUserName","uri":"MyUserName <sip:50363@sip.zadarma.com>","id":1} }
+12-18 13:20:41.434  9915 10262 D PjSipLogWriter: 13:20:41.433        tsx0x737f3c78a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.435  9915 10262 D PjSipLogWriter: 13:20:41.434       tdta0x737f7f90a8  ..Destroying txdata Request msg REGISTER/cseq=56018 (tdta0x737f7f90a8)
+12-18 13:20:41.437  9915 10262 D PjSipLogWriter: 13:20:41.435        tsx0x737f3c78a8  Transaction destroyed!
+12-18 13:20:41.471  9915  9980 D PjSipService: Handle "call_make" action ({"destination":"sip:50013@sip.zadarma.com","settings":"{}","account_id":1,"callback_id":7})
+12-18 13:20:41.473  9915  9980 D PjSipLogWriter: 13:20:41.473           pjsua_call.c !Making call with acc #1 to sip:50013@sip.zadarma.com
+12-18 13:20:41.473  9915  9980 D PjSipLogWriter: 13:20:41.473        dlg0x7c40f8c8a8  .UAC dialog created
+12-18 13:20:41.473  9915  9980 D PjSipLogWriter: 13:20:41.473        dlg0x7c40f8c8a8  ..Session count inc to 2 by mod-pjsua
+12-18 13:20:41.474  9915  9980 D PjSipLogWriter: 13:20:41.473          pjsua_media.c  .Call 2: initializing media..
+12-18 13:20:41.476  9915  9980 D PjSipLogWriter: 13:20:41.476          pjsua_media.c  ..RTP socket reachable at 10.135.123.201:4008
+12-18 13:20:41.476  9915  9980 D PjSipLogWriter: 13:20:41.476          pjsua_media.c  ..RTCP socket reachable at 10.135.123.201:4009
+12-18 13:20:41.477  9915  9980 D PjSipLogWriter: 13:20:41.477       srtp0x7c507b2400  ..SRTP keying SDES created
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479          pjsua_media.c  ..RTP socket reachable at 10.135.123.201:4010
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479          pjsua_media.c  ..RTCP socket reachable at 10.135.123.201:4011
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479       srtp0x7c40f79400  ..SRTP keying SDES created
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479          pjsua_media.c  ..Media index 0 selected for audio call 2
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479          pjsua_media.c  ..Call 2: media transport initialization complete: Success
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479        dlg0x7c40f8c8a8  ..Session count dec to 2 by mod-pjsua
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479        dlg0x7c40f8c8a8  .Module mod-invite added as dialog usage, data=0x7c40f79c28
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479        dlg0x7c40f8c8a8  ..Session count inc to 4 by mod-invite
+12-18 13:20:41.479  9915  9980 D PjSipLogWriter: 13:20:41.479        dlg0x7c40f8c8a8  .Module mod-100rel added as dialog usage, data=0x7c40f8f6a8
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.479        dlg0x7c40f8c8a8  .100rel module attached
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480        inv0x7c40f8c8a8  .UAC invite session created for dialog dlg0x7c40f8c8a8
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480               endpoint  .Request msg INVITE/cseq=21311 (tdta0x7c507f10a8) created.
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480        inv0x7c40f8c8a8  ..Sending Request msg INVITE/cseq=21311 (tdta0x7c507f10a8)
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480        dlg0x7c40f8c8a8  ...Sending Request msg INVITE/cseq=21311 (tdta0x7c507f10a8)
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480        tsx0x737f3c78a8  ....Transaction created for Request msg INVITE/cseq=21310 (tdta0x7c507f10a8)
+12-18 13:20:41.480  9915  9980 D PjSipLogWriter: 13:20:41.480        tsx0x737f3c78a8  ...Sending Request msg INVITE/cseq=21310 (tdta0x7c507f10a8) in state Null
+12-18 13:20:41.481  9915  9980 D PjSipLogWriter: 13:20:41.480          sip_resolve.c  ....DNS resolver not available, target 'sip.zadarma.com:0' type=TCP will be resolved with getaddrinfo()
+12-18 13:20:41.484  9915  9980 D PjSipLogWriter: 13:20:41.484          sip_resolve.c  ....Target 'sip.zadarma.com:0' type=TCP resolved to '37.139.38.17:5060' type=TCP (TCP transport)
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: 13:20:41.485           pjsua_core.c  ....TX 1777 bytes Request msg INVITE/cseq=21310 (tdta0x7c507f10a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: INVITE sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj4cef6914-0396-4c04-acda-4c068a15cde5;alias
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: To: sip:50013@sip.zadarma.com
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Contact: "MyUserName" <sip:50363@10.135.123.201:43396;ob>
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: CSeq: 21310 INVITE
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Supported: replaces, 100rel, timer, norefersub
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Session-Expires: 1800
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Min-SE: 90
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: User-Agent: React Native PjSip (2.8)
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Content-Type: application/sdp
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: Content-Length:  1092
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter:
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: v=0
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: o=- 3785653241 3785653241 IN IP4 10.135.123.201
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: s=pjmedia
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: b=AS:386
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: t=0 0
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=X-nat:0
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: m=audio 4008 RTP/AVP 98 97 99 104 3 0 8 9 113 114 115 116 117 120 96
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: b=TIAS:96000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtcp:4009 IN IP4 10.135.123.201
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=sendrecv
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:98 speex/16000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:97 speex/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:99 speex/32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:104 iLBC/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:104 mode=30
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:3 GSM/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:0 PCMU/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:8 PCMA/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:9 G722/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:113 G7221/16000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:113 bitrate=24000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:114 G7221/16000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:114 bitrate=32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:115 G7221/32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:115 bitrate=24000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:116 G7221/32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:116 bitrate=32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:117 G7221/32000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:117 bitrate=48000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:120 opus/48000/2
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:120 useinbandfec=1
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:96 telephone-event/8000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:96 0-16
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=ssrc:554441839 cname:0241bb7471e280fb
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: m=video 4010 RTP/AVP 97
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: b=TIAS:256000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtcp:4011 IN IP4 10.135.123.201
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=sendrecv
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=rtpmap:97 H264/90000
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: a=ssrc:60281661 cname:0241bb7471e280fb
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter:
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: --end msg--
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: 13:20:41.485        tsx0x737f3c78a8  ....State changed from Null to Calling, event=TX_MSG
+12-18 13:20:41.485  9915  9980 D PjSipLogWriter: 13:20:41.485        dlg0x7c40f8c8a8  .....Transaction tsx0x737f3c78a8 state changed to Calling
+12-18 13:20:41.493  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.call.changed" response from service ({"data":"{\"id\":2,\"callId\":\"b4babea9-d800-45d8-bf1a-655bd2d056e2\",\"accountId\":1,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_CALLING\",\"stateText\":\"CALLING\",\"connectDuration\":-1,\"totalDuration\":0,\"held\":false,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_NULL\",\"lastReason\":\"\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}"})
+12-18 13:20:41.497  9915  9915 D PjSipBroadcastReceiver: emit pjSipCallChanged / { NativeMap: {"media":[],"audioCount":1,"remoteAudioCount":0,"lastReason":"","speaker":false,"held":false,"state":"PJSIP_INV_STATE_CALLING","remoteUri":"sip:50013@sip.zadarma.com","localContact":"\"MyUserName\" <sip:50363@10.135.123.201:43396;ob>","id":2,"provisionalMedia":[{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"},{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"}],"videoCount":1,"remoteVideoCount":0,"remoteOfferer":false,"lastStatusCode":"PJSIP_SC_NULL","muted":false,"totalDuration":0,"connectDuration":-1,"stateText":"CALLING","remoteContact":"","localUri":"MyUserName <sip:50363@sip.zadarma.com>","accountId":1,"callId":"b4babea9-d800-45d8-bf1a-655bd2d056e2"} }
+12-18 13:20:41.500  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.call.changed" response from service ({"data":"{\"id\":1,\"callId\":\"0225ae16-333f-462f-a2c2-404dc5f19745\",\"accountId\":0,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_CALLING\",\"stateText\":\"CALLING\",\"connectDuration\":-1,\"totalDuration\":1,\"held\":true,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_NULL\",\"lastReason\":\"\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}"})
+12-18 13:20:41.504  9915  9915 D PjSipBroadcastReceiver: emit pjSipCallChanged / { NativeMap: {"media":[],"audioCount":1,"remoteAudioCount":0,"lastReason":"","speaker":false,"held":true,"state":"PJSIP_INV_STATE_CALLING","remoteUri":"sip:50013@sip.zadarma.com","localContact":"\"MyUserName\" <sip:50363@10.135.123.201:43396;ob>","id":1,"provisionalMedia":[{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"},{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"}],"videoCount":1,"remoteVideoCount":0,"remoteOfferer":false,"lastStatusCode":"PJSIP_SC_NULL","muted":false,"totalDuration":1,"connectDuration":-1,"stateText":"CALLING","remoteContact":"","localUri":"MyUserName <sip:50363@sip.zadarma.com>","accountId":0,"callId":"0225ae16-333f-462f-a2c2-404dc5f19745"} }
+12-18 13:20:41.509  9915  9980 D PjSipLogWriter: 13:20:41.509           pjsua_call.c  Putting call 1 on hold
+12-18 13:20:41.510  9915  9980 D PjSipLogWriter: 13:20:41.510           pjsua_call.c  .Can not hold call that is not confirmed
+12-18 13:20:41.510  9915  9980 D PjSipLogWriter: 13:20:41.510               call.cpp  pjsua_call_set_hold2(id, prm.options, param.p_msg_data) error: Invalid INVITE session state (PJSIP_ESESSIONSTATE) (status=171141) [../src/pjsua2/call.cpp:598]
+12-18 13:20:41.565  9915  9980 W PjSipService: Failed to put call on hold
+12-18 13:20:41.565  9915  9980 W PjSipService: java.lang.Exception: Title:       pjsua_call_set_hold2(id, prm.options, param.p_msg_data)
+12-18 13:20:41.565  9915  9980 W PjSipService: Code:        171141
+12-18 13:20:41.565  9915  9980 W PjSipService: Description: Invalid INVITE session state (PJSIP_ESESSIONSTATE)
+12-18 13:20:41.565  9915  9980 W PjSipService: Location:    ../src/pjsua2/call.cpp:598
+12-18 13:20:41.565  9915  9980 W PjSipService:
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at org.pjsip.pjsua2.pjsua2JNI.Call_setHold(Native Method)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at org.pjsip.pjsua2.Call.setHold(Call.java:119)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipCall.hold(PjSipCall.java:58)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipService.doPauseParallelCalls(PjSipService.java:1069)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipService.handleCallMake(PjSipService.java:665)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipService.handle(PjSipService.java:351)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipService.access$200(PjSipService.java:59)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at com.carusto.ReactNativePjSip.PjSipService$3.run(PjSipService.java:248)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at android.os.Handler.handleCallback(Handler.java:873)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at android.os.Looper.loop(Looper.java:201)
+12-18 13:20:41.565  9915  9980 W PjSipService: 	at android.os.HandlerThread.run(HandlerThread.java:65)
+12-18 13:20:41.576  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.handled" response from service ({"data":"{\"id\":2,\"callId\":\"b4babea9-d800-45d8-bf1a-655bd2d056e2\",\"accountId\":1,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_CALLING\",\"stateText\":\"CALLING\",\"connectDuration\":-1,\"totalDuration\":0,\"held\":false,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_NULL\",\"lastReason\":\"\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}","callback_id":7})
+12-18 13:20:41.579  9915 10262 D PjSipLogWriter: 13:20:41.577         sip_endpoint.c !Processing incoming message: Response msg 407/INVITE/cseq=21310 (rdata0x7c5068bb30)
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: 13:20:41.580           pjsua_core.c  .RX 556 bytes Response msg 407/INVITE/cseq=21310 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: SIP/2.0 407 Proxy Authentication Required
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPj4cef6914-0396-4c04-acda-4c068a15cde5;alias;received=176.59.15.222
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=6d8afd3ee9eed615c4ab8afe931d20cf.de22
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: CSeq: 21310 INVITE
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: Proxy-Authenticate: Digest realm="sip.zadarma.com", nonce="Xfn+pl35/Xq8bNWhOr6g2LsJnm6NvG7A", qop="auth"
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.581  9915 10262 D PjSipLogWriter: 13:20:41.581        tsx0x737f3c78a8  .Incoming Response msg 407/INVITE/cseq=21310 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: 13:20:41.581               endpoint  ..Request msg ACK/cseq=21310 (tdta0x737f7f90a8) created.
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: 13:20:41.582           pjsua_core.c  ..TX 409 bytes Request msg ACK/cseq=21310 (tdta0x737f7f90a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: ACK sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj4cef6914-0396-4c04-acda-4c068a15cde5;alias
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=6d8afd3ee9eed615c4ab8afe931d20cf.de22
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: CSeq: 21310 ACK
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.582  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.583  9915 10262 D PjSipLogWriter: 13:20:41.582        tsx0x737f3c78a8  ..State changed from Calling to Completed, event=RX_MSG
+12-18 13:20:41.583  9915 10262 D PjSipLogWriter: 13:20:41.583        dlg0x7c40f8c8a8  ...Received Response msg 407/INVITE/cseq=21310 (rdata0x7c5068bb30)
+12-18 13:20:41.583  9915 10262 D PjSipLogWriter: 13:20:41.583        dlg0x7c40f8c8a8  ...Transaction tsx0x737f3c78a8 state changed to Completed
+12-18 13:20:41.584  9915 10262 D PjSipLogWriter: 13:20:41.584        inv0x7c40f8c8a8  .....Sending Request msg INVITE/cseq=21310 (tdta0x7c507f10a8)
+12-18 13:20:41.584  9915 10262 D PjSipLogWriter: 13:20:41.584        dlg0x7c40f8c8a8  ......Sending Request msg INVITE/cseq=21310 (tdta0x7c507f10a8)
+12-18 13:20:41.585  9915 10262 D PjSipLogWriter: 13:20:41.585        tsx0x737f7fc0a8  .......Transaction created for Request msg INVITE/cseq=21311 (tdta0x7c507f10a8)
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: 13:20:41.585        tsx0x737f7fc0a8  ......Sending Request msg INVITE/cseq=21311 (tdta0x7c507f10a8) in state Null
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: 13:20:41.586               endpoint  .......Request msg INVITE/cseq=21311 (tdta0x7c507f10a8): skipping target resolution because address is already set
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: 13:20:41.586           pjsua_core.c  .......TX 2038 bytes Request msg INVITE/cseq=21311 (tdta0x7c507f10a8) to TCP 37.139.38.17:5060:
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: INVITE sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj159c6255-afc3-462e-8244-16e2f6bed464;alias
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Contact: "MyUserName" <sip:50363@10.135.123.201:43396;ob>
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: CSeq: 21311 INVITE
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Supported: replaces, 100rel, timer, norefersub
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Session-Expires: 1800
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Min-SE: 90
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: User-Agent: React Native PjSip (2.8)
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Proxy-Authorization: Digest username="50363", realm="sip.zadarma.com", nonce="Xfn+pl35/Xq8bNWhOr6g2LsJnm6NvG7A", uri="sip:50013@sip.zadarma.com", response="49447d00d0f99287702a99f9bac07f37", cnonce="b504cfec-de13-4f64-97b3-4e92d1956d31", qop=auth, nc=00000001
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Content-Type: application/sdp
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: Content-Length:  1092
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: v=0
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: o=- 3785653241 3785653241 IN IP4 10.135.123.201
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: s=pjmedia
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: b=AS:386
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: t=0 0
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=X-nat:0
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: m=audio 4008 RTP/AVP 98 97 99 104 3 0 8 9 113 114 115 116 117 120 96
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: b=TIAS:96000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtcp:4009 IN IP4 10.135.123.201
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=sendrecv
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:98 speex/16000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:97 speex/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:99 speex/32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:104 iLBC/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:104 mode=30
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:3 GSM/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:0 PCMU/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:8 PCMA/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:9 G722/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:113 G7221/16000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:113 bitrate=24000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:114 G7221/16000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:114 bitrate=32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:115 G7221/32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:115 bitrate=24000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:116 G7221/32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:116 bitrate=32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:117 G7221/32000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:117 bitrate=48000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:120 opus/48000/2
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:120 useinbandfec=1
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:96 telephone-event/8000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:96 0-16
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=ssrc:554441839 cname:0241bb7471e280fb
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: m=video 4010 RTP/AVP 97
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: c=IN IP4 10.135.123.201
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: b=TIAS:256000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtcp:4011 IN IP4 10.135.123.201
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=sendrecv
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=rtpmap:97 H264/90000
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=fmtp:97 profile-level-id=42e01e; packetization-mode=1
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: a=ssrc:60281661 cname:0241bb7471e280fb
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.586  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.590  9915 10262 D PjSipLogWriter: 13:20:41.589        tsx0x737f7fc0a8  .......State changed from Null to Calling, event=TX_MSG
+12-18 13:20:41.590  9915 10262 D PjSipLogWriter: 13:20:41.590        dlg0x7c40f8c8a8  ........Transaction tsx0x737f7fc0a8 state changed to Calling
+12-18 13:20:41.591  9915 10262 D PjSipLogWriter: 13:20:41.591        tsx0x737f3c78a8  Timeout timer event
+12-18 13:20:41.592  9915 10262 D PjSipLogWriter: 13:20:41.592        tsx0x737f3c78a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:41.592  9915 10262 D PjSipLogWriter: 13:20:41.592        dlg0x7c40f8c8a8  ..Transaction tsx0x737f3c78a8 state changed to Terminated
+12-18 13:20:41.592  9915 10262 D PjSipLogWriter: 13:20:41.592        tsx0x737f3c78a8  Timeout timer event
+12-18 13:20:41.593  9915 10262 D PjSipLogWriter: 13:20:41.592        tsx0x737f3c78a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:41.593  9915 10262 D PjSipLogWriter: 13:20:41.593       tdta0x737f7f90a8  ..Destroying txdata Request msg ACK/cseq=21310 (tdta0x737f7f90a8)
+12-18 13:20:41.593  9915 10262 D PjSipLogWriter: 13:20:41.593        tsx0x737f3c78a8  Transaction destroyed!
+12-18 13:20:41.764  9915 10262 D PjSipLogWriter: 13:20:41.763         sip_endpoint.c  Processing incoming message: Response msg 100/INVITE/cseq=21311 (rdata0x7c5068bb30)
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: 13:20:41.765           pjsua_core.c  .RX 417 bytes Response msg 100/INVITE/cseq=21311 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: SIP/2.0 100 trying -- your call is important to us
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport=43498;branch=z9hG4bKPj159c6255-afc3-462e-8244-16e2f6bed464;alias;received=176.59.15.222
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: CSeq: 21311 INVITE
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: Server: Zadarma server
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter:
+12-18 13:20:41.765  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:41.766  9915 10262 D PjSipLogWriter: 13:20:41.765        tsx0x737f7fc0a8  .Incoming Response msg 100/INVITE/cseq=21311 (rdata0x7c5068bb30) in state Calling
+12-18 13:20:41.766  9915 10262 D PjSipLogWriter: 13:20:41.766        tsx0x737f7fc0a8  ..State changed from Calling to Proceeding, event=RX_MSG
+12-18 13:20:41.770  9915 10262 D PjSipLogWriter: 13:20:41.766        dlg0x7c40f8c8a8  ...Received Response msg 100/INVITE/cseq=21311 (rdata0x7c5068bb30)
+12-18 13:20:41.775  9915 10262 D PjSipLogWriter: 13:20:41.770        dlg0x7c40f8c8a8  ...Transaction tsx0x737f7fc0a8 state changed to Proceeding
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: 13:20:42.591         sip_endpoint.c  Processing incoming message: Response msg 180/INVITE/cseq=15162 (rdata0x7c5068bb30)
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: 13:20:42.592           pjsua_core.c  .RX 758 bytes Response msg 180/INVITE/cseq=15162 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: SIP/2.0 180 Ringing
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;received=176.59.15.222;rport=43498;branch=z9hG4bKPj9bdc68ba-e41a-4917-92b6-3231bc46c48e;alias
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Record-Route: <sip:37.139.38.17;r2=on;lr=on;ftag=7d3a6557-935f-4737-9a19-b57bd56a6155;nat=yes>
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Record-Route: <sip:37.139.38.17;transport=tcp;r2=on;lr=on;ftag=7d3a6557-935f-4737-9a19-b57bd56a6155;nat=yes>
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=7d3a6557-935f-4737-9a19-b57bd56a6155
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as1d373793
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Call-ID: 0225ae16-333f-462f-a2c2-404dc5f19745
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: CSeq: 15162 INVITE
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Server: Zadarma Voip
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Supported: replaces
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Contact: <sip:50013@37.139.38.65:5060>
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter:
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter:
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: 13:20:42.592        tsx0x737f3c70a8  .Incoming Response msg 180/INVITE/cseq=15162 (rdata0x7c5068bb30) in state Proceeding
+12-18 13:20:42.592  9915 10262 D PjSipLogWriter: 13:20:42.592        tsx0x737f3c70a8  ..State changed from Proceeding to Proceeding, event=RX_MSG
+12-18 13:20:42.593  9915 10262 D PjSipLogWriter: 13:20:42.592        dlg0x7c40f8c0a8  ...Received Response msg 180/INVITE/cseq=15162 (rdata0x7c5068bb30)
+12-18 13:20:42.593  9915 10262 D PjSipLogWriter: 13:20:42.593        dlg0x7c40f8c0a8  ....Route-set updated
+12-18 13:20:42.593  9915 10262 D PjSipLogWriter: 13:20:42.593        dlg0x7c40f8c0a8  ...Transaction tsx0x737f3c70a8 state changed to Proceeding
+12-18 13:20:42.600  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.call.changed" response from service ({"data":"{\"id\":1,\"callId\":\"0225ae16-333f-462f-a2c2-404dc5f19745\",\"accountId\":0,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\u003csip:50013@37.139.38.65:5060\u003e\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_EARLY\",\"stateText\":\"EARLY\",\"connectDuration\":-1,\"totalDuration\":2,\"held\":true,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_RINGING\",\"lastReason\":\"Ringing\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}"})
+12-18 13:20:42.603  9915  9915 D PjSipBroadcastReceiver: emit pjSipCallChanged / { NativeMap: {"media":[],"audioCount":1,"remoteAudioCount":0,"lastReason":"Ringing","speaker":false,"held":true,"state":"PJSIP_INV_STATE_EARLY","remoteUri":"sip:50013@sip.zadarma.com","localContact":"\"MyUserName\" <sip:50363@10.135.123.201:43396;ob>","id":1,"provisionalMedia":[{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"},{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"}],"videoCount":1,"remoteVideoCount":0,"remoteOfferer":false,"lastStatusCode":"PJSIP_SC_RINGING","muted":false,"totalDuration":2,"connectDuration":-1,"stateText":"EARLY","remoteContact":"<sip:50013@37.139.38.65:5060>","localUri":"MyUserName <sip:50363@sip.zadarma.com>","accountId":0,"callId":"0225ae16-333f-462f-a2c2-404dc5f19745"} }
+12-18 13:20:43.099 13491 13512 D T9      : mPhoneMimeTypeId=1, mSipMimeTypeId=2
+12-18 13:20:43.574  9915 10262 D PjSipLogWriter: 13:20:43.573         sip_endpoint.c  Processing incoming message: Response msg 486/INVITE/cseq=21311 (rdata0x7c5068bb30)
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: 13:20:43.574           pjsua_core.c  .RX 514 bytes Response msg 486/INVITE/cseq=21311 (rdata0x7c5068bb30) from TCP 37.139.38.17:5060:
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: SIP/2.0 486 Busy here
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;received=176.59.15.222;rport=43498;branch=z9hG4bKPj159c6255-afc3-462e-8244-16e2f6bed464;alias
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as4cae4b9b
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: CSeq: 21311 INVITE
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Server: Zadarma Voip
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Supported: replaces
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: Content-Length: 0
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter:
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter:
+12-18 13:20:43.575  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:43.576  9915 10262 D PjSipLogWriter: 13:20:43.575        tsx0x737f7fc0a8  .Incoming Response msg 486/INVITE/cseq=21311 (rdata0x7c5068bb30) in state Proceeding
+12-18 13:20:43.576  9915 10262 D PjSipLogWriter: 13:20:43.576               endpoint  ..Request msg ACK/cseq=21311 (tdta0x7c402fb0a8) created.
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: 13:20:43.576           pjsua_core.c  ..TX 382 bytes Request msg ACK/cseq=21311 (tdta0x7c402fb0a8) to TCP 37.139.38.17:5060:
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: ACK sip:50013@sip.zadarma.com SIP/2.0
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: Via: SIP/2.0/TCP 10.135.123.201:43498;rport;branch=z9hG4bKPj159c6255-afc3-462e-8244-16e2f6bed464;alias
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: Max-Forwards: 70
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: From: "MyUserName" <sip:50363@sip.zadarma.com>;tag=bdd6f70c-53e4-4af5-807e-63e25917339f
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: To: sip:50013@sip.zadarma.com;tag=as4cae4b9b
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: Call-ID: b4babea9-d800-45d8-bf1a-655bd2d056e2
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: CSeq: 21311 ACK
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: Content-Length:  0
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter:
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter:
+12-18 13:20:43.577  9915 10262 D PjSipLogWriter: --end msg--
+12-18 13:20:43.578  9915 10262 D PjSipLogWriter: 13:20:43.578        tsx0x737f7fc0a8  ..State changed from Proceeding to Completed, event=RX_MSG
+12-18 13:20:43.582  9915 10262 D PjSipLogWriter: 13:20:43.581        dlg0x7c40f8c8a8  ...Received Response msg 486/INVITE/cseq=21311 (rdata0x7c5068bb30)
+12-18 13:20:43.583  9915 10262 D PjSipLogWriter: 13:20:43.582        dlg0x7c40f8c8a8  ...Transaction tsx0x737f7fc0a8 state changed to Completed
+12-18 13:20:43.595  9915  9915 D PjSipBroadcastReceiver: Received "com.carusto.call.terminated" response from service ({"data":"{\"id\":2,\"callId\":\"b4babea9-d800-45d8-bf1a-655bd2d056e2\",\"accountId\":1,\"localContact\":\"\\\"MyUserName\\\" \u003csip:50363@10.135.123.201:43396;ob\u003e\",\"localUri\":\"MyUserName \u003csip:50363@sip.zadarma.com\u003e\",\"remoteContact\":\"\",\"remoteUri\":\"sip:50013@sip.zadarma.com\",\"state\":\"PJSIP_INV_STATE_DISCONNECTED\",\"stateText\":\"DISCONNCTD\",\"connectDuration\":0,\"totalDuration\":2,\"held\":false,\"muted\":false,\"speaker\":false,\"lastStatusCode\":\"PJSIP_SC_BUSY_HERE\",\"lastReason\":\"Busy here\",\"remoteOfferer\":false,\"remoteAudioCount\":0,\"remoteVideoCount\":0,\"audioCount\":1,\"videoCount\":1,\"media\":[],\"provisionalMedia\":[{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}},{\"dir\":\"PJMEDIA_DIR_NONE\",\"type\":\"PJMEDIA_TYPE_VIDEO\",\"status\":\"PJSUA_CALL_MEDIA_NONE\",\"audioStream\":{\"confSlot\":-1},\"videoStream\":{\"captureDevice\":-3,\"windowId\":-1}}]}"})
+12-18 13:20:43.601  9915  9915 D PjSipBroadcastReceiver: emit pjSipCallTerminated / { NativeMap: {"media":[],"audioCount":1,"remoteAudioCount":0,"lastReason":"Busy here","speaker":false,"held":false,"state":"PJSIP_INV_STATE_DISCONNECTED","remoteUri":"sip:50013@sip.zadarma.com","localContact":"\"MyUserName\" <sip:50363@10.135.123.201:43396;ob>","id":2,"provisionalMedia":[{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"},{"videoStream":{"windowId":-1,"captureDevice":-3},"audioStream":{"confSlot":-1},"status":"PJSUA_CALL_MEDIA_NONE","type":"PJMEDIA_TYPE_VIDEO","dir":"PJMEDIA_DIR_NONE"}],"videoCount":1,"remoteVideoCount":0,"remoteOfferer":false,"lastStatusCode":"PJSIP_SC_BUSY_HERE","muted":false,"totalDuration":2,"connectDuration":0,"stateText":"DISCONNCTD","remoteContact":"","localUri":"MyUserName <sip:50363@sip.zadarma.com>","accountId":1,"callId":"b4babea9-d800-45d8-bf1a-655bd2d056e2"} }
+12-18 13:20:43.606  9915 10262 D PjSipLogWriter: 13:20:43.606          pjsua_media.c  .....Call 2: deinitializing media..
+12-18 13:20:43.607  9915 10262 D PjSipLogWriter: 13:20:43.607          pjsua_media.c  ......Call 2: cleaning up provisional media, prov_med_cnt=2, med_cnt=0
+12-18 13:20:43.610  9915 10262 D PjSipLogWriter: 13:20:43.609        dlg0x7c40f8c8a8  .....Session count dec to 1 by mod-invite
+12-18 13:20:43.610  9915 10262 D PjSipLogWriter: 13:20:43.610       tdta0x7c507f10a8  ..Destroying txdata Request msg INVITE/cseq=21311 (tdta0x7c507f10a8)
+12-18 13:20:43.611  9915 10262 D PjSipLogWriter: 13:20:43.610        tsx0x737f7fc0a8  Timeout timer event
+12-18 13:20:43.611  9915 10262 D PjSipLogWriter: 13:20:43.611        tsx0x737f7fc0a8  .State changed from Completed to Terminated, event=TIMER
+12-18 13:20:43.611  9915 10262 D PjSipLogWriter: 13:20:43.611        dlg0x7c40f8c8a8  ..Transaction tsx0x737f7fc0a8 state changed to Terminated
+12-18 13:20:43.612  9915 10262 D PjSipLogWriter: 13:20:43.611        dlg0x7c40f8c8a8  ...Dialog destroyed
+12-18 13:20:43.615  9915 10262 D PjSipLogWriter: 13:20:43.613        tsx0x737f7fc0a8  Timeout timer event
+12-18 13:20:43.616  9915 10262 D PjSipLogWriter: 13:20:43.615        tsx0x737f7fc0a8  .State changed from Terminated to Destroyed, event=TIMER
+12-18 13:20:43.616  9915 10262 D PjSipLogWriter: 13:20:43.616       tdta0x7c402fb0a8  ..Destroying txdata Request msg ACK/cseq=21311 (tdta0x7c402fb0a8)
+12-18 13:20:43.617  9915 10262 D PjSipLogWriter: 13:20:43.617        tsx0x737f7fc0a8  Transaction destroyed!
+^C
