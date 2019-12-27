@@ -16,6 +16,6 @@ public class MainService extends HeadlessJsTaskService {
         return new HeadlessJsTaskConfig(
           "Rec",
           extras != null ? Arguments.fromBundle(extras) : null,
-          5000);
+          10000,true);
     }
 }

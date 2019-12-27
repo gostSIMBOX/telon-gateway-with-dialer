@@ -100,14 +100,31 @@ class CallScreen extends Component {
 
     this._onIncomingCallAnswer = this.onIncomingCallAnswer.bind(this)
     this._onIncomingCallDecline = this.onIncomingCallDecline.bind(this)
+
+
+    //this.new_componentWillReceiveProps(props);
   }
 
+  /*
   componentDidUpdate(prevProps) 
   {
+    console.log("componentDidUpdate(prevProps) ",prevProps);
     //componentWillReceiveProps1(prevProps);
-  }
+  }*/
 
-   componentWillReceiveProps1(nextProps) {
+/*  
+  getDerivedStateFromProps(nextProps, prevState){
+    console.log("getDerivedStateFromProps(nextProps) ",nextProps);
+    this.new_componentWillReceiveProps(nextProps);
+ }*/
+ 
+
+   UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log("new_componentWillReceiveProps(nextProps)"); 
+    console.log(nextProps);
+    this.state.call = nextProps.call;
+    return;
+
     //!!!
     // Remember latest state of current call, to be able display call information after removal from state
     
@@ -351,9 +368,13 @@ class CallScreen extends Component {
     )
   }
 
+
   render() {
-    const call = this.state.call
-    const calls = this.props.calls
+    const call = this.state.call;
+    const calls = (call?{call1:call}:{}); //this.props.calls;
+
+    console.log("CallScreen->Render");
+    console.log(this.state.call);
 
     
     if (this.state.error) {
@@ -367,11 +388,7 @@ class CallScreen extends Component {
       return this.renderCallWait()
     }
 
-    /*
-                <CallInfo call={call}/>
-          </Animated.View>
 
-    */
     if (this.props.isScreenLocked === true) {
       // TODO: Use overlay with absolute position for better performance
       return (

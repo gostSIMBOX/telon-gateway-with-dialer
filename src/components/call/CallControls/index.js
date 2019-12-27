@@ -35,14 +35,12 @@ export default class CallControls extends Component {
     this._onHangupPress = this.onHangupPress.bind(this)
     this._onAnswerPress = this.onAnswerPress.bind(this)
     this._onRedirectPress = this.onRedirectPress.bind(this)
+
+    //this.new_componentWillReceiveProps(props);
   }
   
-  componentDidUpdate(prevProps) 
-  {
-    componentWillReceiveProps1(prevProps);
-  }
 
-    componentWillReceiveProps1(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
     const call = nextProps.call
 
     if (call.getState() != 'PJSIP_INV_STATE_INCOMING') {
