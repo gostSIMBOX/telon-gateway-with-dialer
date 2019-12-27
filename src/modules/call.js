@@ -10,7 +10,7 @@ export default class Call {
             state, stateText, held, muted, speaker,
             connectDuration, totalDuration,
             remoteOfferer, remoteAudioCount, remoteVideoCount, audioCount, videoCount,
-            lastStatusCode, lastReason, media, provisionalMedia, constructionTime
+            lastStatusCode, lastReason, media, provisionalMedia, creationTime, connectTime
         }) {
         let remoteNumber = null;
         let remoteName = null;
@@ -56,8 +56,9 @@ export default class Call {
 
         this._media = media;
         this._provisionalMedia = provisionalMedia;
-
-        this._constructionTime = (constructionTime>0?constructionTime:Math.round(new Date().getTime() / 1000));
+        this._creationTime=creationTime;
+        this._connectionTime=connectionTime;
+        this._constructionTime = (creationTime>0?constructionTime:Math.round(new Date().getTime() / 1000));
     }
 
     /**

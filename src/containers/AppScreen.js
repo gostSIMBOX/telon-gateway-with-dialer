@@ -13,11 +13,18 @@ import HelloWorld from '../screens/HelloWorld'
 class AppScreen extends Component {
   constructor(props) {
     super(props);
+    let call = this.props.call
     this.state={
-      call:null,
+      call,
       calls:null,
     }
 
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log("new_componentWillReceiveProps(nextProps)"); 
+    console.log(nextProps);
+    this.state.call = nextProps.call;
   }
 
   render() {

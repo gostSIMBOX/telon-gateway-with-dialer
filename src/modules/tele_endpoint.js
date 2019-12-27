@@ -17,17 +17,16 @@ const STATE_DISCONNECTED = 7;
     STATE_SELECT_PHONE_ACCOUNT 8
 */
 
-let callDate;
-
-
-
 
 export default class TeleEndpoint extends EventEmitter {
+
   constructor() {
     super();
     //this.call=new Call();
-    this.state = {
+    
+    this.currentCall=null;
 
+    this.state = {
       //DeviceEventEmitter.addListener('pjSipCallTerminated', this._onCallTerminated.bind(this));
     };
   }
@@ -37,32 +36,44 @@ export default class TeleEndpoint extends EventEmitter {
     console.log("Rec!!!", data);
 
     if (data.action === 'CallService') {
+      console.log("->CallService");
       if (data.extra1s === 'onCallAdded') {
-        //+Statechange - установить
-        console.log("call_received!!!222!!!");
-
-        let call=new Call({remoteUri:data.extra3s,constructionTime:data.extra1l});
-        //console.log(call);
-
-        console.log("call_received!!!!!!");
-        this.emit("call_received", call);
+        console.log("->onCallAdded");
+        this.currentCall=new Call({remoteUri:data.extra3s,creationTime:data.extra1l});
+        this.currentCall.state='PJSIP_INV_STATE_NULL';
       }
+
       if (data.extra1s === 'onCallRemoved') {
-        this.emit("call_terminated", null);
+        this.currentCall=null;
+        this.emit("call_terminated", this.currentCall);
       }
 
-      
+      if ((data.extra1s === 'onStateChanged')||(data.extra1s === 'onCallAdded')) {
+        if (data.extra1i === STATE_CONNECTING) {
+          this.currentCall.state='PJSIP_INV_STATE_CALLING';
+          this.currentCall.incoming=false;
+        }
+        if (data.extra1i === STATE_RINGING) {
+          this.currentCall.state='PJSIP_INV_STATE_INCOMING';
+          this.currentCall.incoming=true;
+        }
 
-      if (data.extra1s === 'onStateChanged') {
         if (data.extra1i === STATE_DIALING) {
-          //
+          this.currentCall.state='PJSIP_INV_STATE_EARLY';
         }
         if (data.extra1i === STATE_ACTIVE) {
-          //
+          this.currentCall.connectTime=data.extra2l;
+          this.currentCall.state='PJSIP_SC_OK';
         }
         if (data.extra1i === STATE_DISCONNECTED) {
-          //
+          this.currentCall.state='PJSIP_INV_STATE_DISCONNECTED';
         }
+
+        if (data.extra1s === 'onCallAdded') {
+          console.log("->onCallAdded->emit");
+          this.emit("call_received", this.currentCall);
+        }  
+
       }
     }
 
@@ -110,7 +121,7 @@ export default class TeleEndpoint extends EventEmitter {
 /*
 Outgoing BUSY
 
-
+9->1 -> 4 -> 7
  LOG  Rec {"action": "CallService", "extra1i": 9, "extra1l": 1577437262895, "extra1s": "onCallAdded", "extra2i": 0, "extra2l": 0, "extra2s": null, "extra3s": "tel:89006367756"}
  LOG  Rec {"action": "new_outgoing_call"}
  LOG  Rec {"action": "CallService", "extra1i": 0, "extra1l": 0, "extra1s": "onDetailsChanged", "extra2i": 0, "extra2l": 0, "extra2s": null, "extra3s": "tel:89006367756"}

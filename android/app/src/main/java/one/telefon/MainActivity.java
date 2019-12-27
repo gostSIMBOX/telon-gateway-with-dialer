@@ -14,6 +14,11 @@ import android.content.Context;
 import android.content.Intent;
 ////
 
+import com.codegulp.invokeapp.RNInvokeApp;
+
+
+
+
 /*
 import com.facebook.react.ReactActivity;
 
@@ -56,6 +61,8 @@ public class MainActivity extends ReactActivity {
 
     Window w = getWindow();
     w.setFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED, WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+
+    RNInvokeApp.sendEvent();
   }
 
   @Override

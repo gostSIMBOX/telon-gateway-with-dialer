@@ -5260,6 +5260,11 @@ react-native-immediate-phone-call@wumke/react-native-immediate-phone-call:
   version "1.0.0"
   resolved "https://codeload.github.com/wumke/react-native-immediate-phone-call/tar.gz/bb59df2fd8fdd9b8aec86224d252c81872d3da6b"
 
+react-native-invoke-app@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-invoke-app/-/react-native-invoke-app-1.0.4.tgz#098d9ab778c8fe57c9e1aad973f413f36e5c32a9"
+  integrity sha512-gbl6Qfrc51Q9P3M+/e72E1EudS4NNSUkpZCqhpbkKj+hQpcEaIXG8erY9SkcWSbMCg/5xYig1Qu/F3kqncHcwg==
+
 react-native-linear-gradient@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { AppRegistry } from 'react-native';
 
+import invokeApp from 'react-native-invoke-app';
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 
 import AppScreen from './containers/AppScreen'
@@ -16,6 +17,10 @@ export default class Root extends Component {
     this.tele = new Tele();
     //this.pjsip=new Pjsip();
 
+    this.state={
+      call:null,
+      calls:null,
+    }
 
   }
 
@@ -28,12 +33,13 @@ export default class Root extends Component {
 
     //let call=new Call({remoteUri:"sip:s11s@sss11"});
     //let call=new Call({remoteUri:"tel:222"});
-    //this.AppScreen1.setState({ call: call });
+    //this.setState({ call: call });
   }
 
   onCallReceived = (call) => {
     console.log("index->onCallReceived");
-    this.AppScreen1.setState({ call: call });
+    this.AppScreen1.setState({ call: call },invokeApp);
+    //invokeApp();
   }
 
   onCallTerminated = (call) => {
@@ -44,9 +50,11 @@ export default class Root extends Component {
 
 
   render() {
+    const call=this.state.call;
+    const calls = (call?{call1:call}:{}); //this.props.calls;
 
     return (
-      <AppScreen ref={(c) => {
+      <AppScreen call={call} calls={calls} ref={(c) => {
         this.AppScreen1 = c
       }} />
     )

@@ -15,6 +15,7 @@
     "react-native": "0.61.5",
     "react-native-audio": "^4.3.0",
     "react-native-immediate-phone-call": "wumke/react-native-immediate-phone-call",
+    "react-native-invoke-app": "^1.0.4",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-permissions": "^2.0.8",
     "react-native-send-intent": "^1.0.31",
