@@ -23,6 +23,13 @@ export default class Root extends Component {
     //request(PERMISSIONS.ANDROID.READ_PHONE_STATE).then(result => {console.log("READ_PHONE_STATE");});
 
     Rec=this.tele.Rec;
+    /*
+    Rec = async (data) => {
+      console.log("Rec",data);
+  
+   
+    }
+    */
   }
 
  

@@ -1,4 +1,4 @@
-
+import React, { Component } from 'react'
 import { Call } from './call'
 
 const STATE_DIALING = 1;
