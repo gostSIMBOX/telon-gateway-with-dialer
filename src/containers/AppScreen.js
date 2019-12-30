@@ -22,14 +22,15 @@ class AppScreen extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log("new_componentWillReceiveProps(nextProps)"); 
-    console.log(nextProps);
-    this.state.call = nextProps.call;
+    console.log("AppScreen->UNSAFE_componentWillReceiveProps(nextProps)"); 
+    console.log("nextProps",nextProps);
+    //this.state.call= nextProps.cal
+    this.setState({call: nextProps.call});
   }
 
   render() {
-    console.log("AppScreen->Render");
-    console.log(this.state.call);
+    console.log("AppScreen->Render()");
+    console.log("this.state.call",this.state.call);
 
     const full = false; //navigation.current.name === "call"
     const barColor = "#36454b"
@@ -44,7 +45,7 @@ class AppScreen extends Component {
         barStyle={barStyle}
         hidden={full}
       />
-      <CallScreen call={call} calls={calls}
+      <CallScreen call={call} calls={calls} tele={this.props.tele}
       /></View>;
   }
 

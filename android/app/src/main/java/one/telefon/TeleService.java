@@ -1,6 +1,7 @@
 package one.telefon;
 
 import one.telefon.MainService;
+import one.telefon.TeleManager;
 
 import android.os.Bundle;
 
@@ -14,8 +15,11 @@ import com.facebook.react.HeadlessJsTaskService;
 import android.telecom.Call;
 import android.telecom.InCallService;
 
-public class CallService extends InCallService {
-    private static String LOG_TAG = "LOG_telefon.one[CallService]";
+
+
+public class TeleService extends InCallService {
+    private static String LOG_TAG = "LOG_telefon.one[TeleService]";
+    
 
     /*
     private boolean isAppOnForeground(Context context) {
@@ -65,6 +69,8 @@ public class CallService extends InCallService {
     public void onCallAdded(Call call) {
         Log.d(LOG_TAG, "onCallAdded");
         super.onCallAdded(call);
+        
+        TeleManager.updateCall(call);
 
         Call.Details details = call.getDetails();
 
@@ -84,7 +90,7 @@ public class CallService extends InCallService {
             direction = 0;
         }
 
-        sendHeadless("CallService", "onCallAdded", name, num, state, direction, creationTimeMillis, 0);
+        sendHeadless("TeleService", "onCallAdded", name, num, state, direction, creationTimeMillis, 0);
 
         /* DisconnectCause getDisconnectCause() */
 
@@ -93,7 +99,7 @@ public class CallService extends InCallService {
             public void onCallDestroyed(Call call) {
                 Log.d(LOG_TAG, "onCallAdded");
                 super.onCallDestroyed(call);
-                sendHeadless("CallService", "onCallDestroyed", "", "", 0, 0, 0, 0);
+                sendHeadless("TeleService", "onCallDestroyed", "", "", 0, 0, 0, 0);
             }
 
             @Override
@@ -103,7 +109,7 @@ public class CallService extends InCallService {
                 super.onDetailsChanged(call, details);
                 String num = details.getHandle().toString();
                 String name = details.getCallerDisplayName();
-                sendHeadless("CallService", "onDetailsChanged", name, num, 0, 0, 0, 0);
+                sendHeadless("TeleService", "onDetailsChanged", name, num, 0, 0, 0, 0);
             }
 
             @Override
@@ -112,7 +118,7 @@ public class CallService extends InCallService {
                 super.onStateChanged(call, state);
                 long connectTimeMillis = details.getConnectTimeMillis();
 
-                sendHeadless("CallService", "onStateChanged", "", "", state, 0, 0, connectTimeMillis);
+                sendHeadless("TeleService", "onStateChanged", "", "", state, 0, 0, connectTimeMillis);
             }
 
             @Override
@@ -123,14 +129,14 @@ public class CallService extends InCallService {
                 Log.d(LOG_TAG, "getDisconnect description: " + call.getDetails().getDisconnectCause().getDescription());
                 Log.d(LOG_TAG, "event : " + event);
                 super.onConnectionEvent(call, event, extras);
-                sendHeadless("CallService", "onConnectionEvent", event, "", 0, 0, 0, 0);
+                sendHeadless("TeleService", "onConnectionEvent", event, "", 0, 0, 0, 0);
             }
 
             @Override
             public void onRttRequest(Call call, int id) {
                 Log.d(LOG_TAG, "onRttRequest");
                 super.onRttRequest(call, id);
-                sendHeadless("CallService", "onRttRequest", "", "", id, 0, 0, 0);
+                sendHeadless("TeleService", "onRttRequest", "", "", id, 0, 0, 0);
             }
 
         });
@@ -141,8 +147,11 @@ public class CallService extends InCallService {
     public void onCallRemoved(Call call) {
         Log.w(LOG_TAG, "onCallRemoved");
         super.onCallRemoved(call);
+
+        TeleManager.updateCall(call);
+
         // ADD: call.unregisterCallback(callCallback);
-        sendHeadless("CallService", "onCallRemoved", "", "", 0, 0, 0, 0);
+        sendHeadless("TeleService", "onCallRemoved", "", "", 0, 0, 0, 0);
     }
 
 }
@@ -150,7 +159,7 @@ public class CallService extends InCallService {
 /*
  * @Override public void onConnectionEvent(Call call, String event, Bundle
  * extras) { Log.d(LOG_TAG, "onConnectionEvent"); super.onConnectionEvent(call,
- * event, extras); sendHeadless("CallService","onConnectionEvent_"+event); }
+ * event, extras); sendHeadless("TeleService","onConnectionEvent_"+event); }
  */
 // private Call OngoingCall;
 

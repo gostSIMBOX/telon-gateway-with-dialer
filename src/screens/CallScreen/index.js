@@ -22,6 +22,7 @@ import IncomingCallModal from '../../components/call/IncomingCallModal'
 
 import s from './styles'
 import cs from '../../assets/styles/containers'
+import TeleEndpoint from '../../modules/tele_endpoint'
 
 class CallScreen extends Component {
   constructor(props) {
@@ -71,7 +72,13 @@ class CallScreen extends Component {
     }
 
     this._onCallAnswer = this.onCallAnswer.bind(this)
-    this._onCallHangup = this.onCallHangup.bind(this)
+    //this._onCallHangup = this.onCallHangup.bind(this)
+    this._onCallHangup = () =>
+    {
+      console.log("_onCallHangup");
+      console.log(this.tele);
+      this.tele.hangupCall(call);
+    }
     this._onCallChatPress = this.onCallChatPress.bind(this)
     this._onCallMutePress = this.onCallMutePress.bind(this)
     this._onCallUnMutePress = this.onCallUnMutePress.bind(this)
@@ -98,11 +105,25 @@ class CallScreen extends Component {
     this._onCallRedirectClosePress = this.onCallRedirectClosePress.bind(this)
     this._onCallRedirectSubmitPress = this.onCallRedirectSubmitPress.bind(this)
 
-    this._onIncomingCallAnswer = this.onIncomingCallAnswer.bind(this)
-    this._onIncomingCallDecline = this.onIncomingCallDecline.bind(this)
+    //this._onIncomingCallAnswer = this.onIncomingCallAnswer.bind(this)
+    //this._onIncomingCallDecline = this.onIncomingCallDecline.bind(this)
+
+    this._onIncomingCallAnswer = () =>
+    {
+      console.log("_onIncomingCallAnswer");
+      console.log(this.tele);
+      this.tele.answerCall(call);
+    }
+    this._onIncomingCallDecline = () =>
+    {
+      console.log("_onIncomingCallDecline");
+      console.log(this.tele);
+      this.tele.declineCall(call);
+    }
 
 
     //this.new_componentWillReceiveProps(props);
+    this.tele=this.props.tele;
   }
 
   /*
@@ -120,9 +141,28 @@ class CallScreen extends Component {
  
 
    UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log("new_componentWillReceiveProps(nextProps)"); 
-    console.log(nextProps);
-    this.state.call = nextProps.call;
+    console.log("CallScreen->new_componentWillReceiveProps(nextProps)"); 
+    console.log("nextProps",nextProps);
+    
+    this.tele=nextProps.tele;
+    //this.state.incomingCall = nextProps.call;
+    //return;
+    // END HERE
+    //this.state.call = nextProps.call;
+    if(nextProps.call==null) 
+    {
+      this.setState({call:null,incomingCall:null});
+      return;
+    }
+    //console.log("###",nextProps.call.incoming);
+  
+    this.setState({call:nextProps.call});
+
+    if (nextProps.call.getState() === "PJSIP_INV_STATE_INCOMING") {
+      this.setState({incomingCall:nextProps.call});
+    } else {
+      this.setState({incomingCall:null});
+    }
     return;
 
     //!!!
@@ -370,11 +410,15 @@ class CallScreen extends Component {
 
 
   render() {
+    console.log("CallScreen->Render");
+    console.log("this.state.call",this.state.call);
+
+
     const call = this.state.call;
     const calls = (call?{call1:call}:{}); //this.props.calls;
 
-    console.log("CallScreen->Render");
-    console.log(this.state.call);
+
+    console.log(this.state.incomingCall);
 
     
     if (this.state.error) {
@@ -632,10 +676,13 @@ function actions(dispatch, getState) {
       dispatch(PjSip.redirectCall(call, destination))
     },
     onCallHangup(call) {
-      dispatch(PjSip.hangupCall(call))
+      //dispatch(PjSip.hangupCall(call))
+      console.log("onCallHangup");
+      tele.hangupCall(call);
     },
     onCallAnswer(call) {
-      dispatch(PjSip.answerCall(call))
+      //dispatch(PjSip.answerCall(call))
+      
     },
     onCallSelect: (call) => {
       dispatch(Navigation.goAndReplace({name: 'call', call}))
@@ -644,11 +691,15 @@ function actions(dispatch, getState) {
       dispatch(PjSip.makeCall(destination))
     },
     onIncomingCallAnswer(call) {
-      dispatch(PjSip.answerCall(call))
+      //dispatch(PjSip.answerCall(call))
+      console.log("onIncomingCallAnswer");
+      tele.answerCall(call);
       dispatch(Navigation.goAndReplace({name: 'call', call}))
     },
     onIncomingCallDecline(call) {
-      dispatch(PjSip.declineCall(call))
+      console.log("onIncomingCallDecline");
+      //dispatch(PjSip.declineCall(call))
+      tele.declineCall(call);
     }
   }
 }

@@ -28,6 +28,13 @@ export default class Call {
                     remoteNumber = match[1];
                 }
             }
+
+                match = remoteUri.match(/tel:([^@]+)/);
+
+                if (match) {
+                    remoteNumber = decodeURIComponent(match[1]);
+                }
+            
         }
 
         this._id = id;
@@ -57,8 +64,8 @@ export default class Call {
         this._media = media;
         this._provisionalMedia = provisionalMedia;
         this._creationTime=creationTime;
-        this._connectionTime=connectionTime;
-        this._constructionTime = (creationTime>0?constructionTime:Math.round(new Date().getTime() / 1000));
+        this._connectTime=connectTime;
+        this._constructionTime = Math.round(new Date().getTime() / 1000);
     }
 
     /**

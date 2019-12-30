@@ -32,8 +32,12 @@ export default class Root extends Component {
     Rec = this.tele.Rec;
 
     //let call=new Call({remoteUri:"sip:s11s@sss11"});
+    
     //let call=new Call({remoteUri:"tel:222"});
+    //call.incoming=true;
+
     //this.setState({ call: call });
+
   }
 
   onCallReceived = (call) => {
@@ -44,6 +48,7 @@ export default class Root extends Component {
 
   onCallTerminated = (call) => {
     console.log("index->onCallTerminated");
+    //this.AppScreen1.setState({ call: call });
     this.AppScreen1.setState({ call: call });
   }
 
@@ -54,7 +59,7 @@ export default class Root extends Component {
     const calls = (call?{call1:call}:{}); //this.props.calls;
 
     return (
-      <AppScreen call={call} calls={calls} ref={(c) => {
+      <AppScreen call={call} calls={calls} tele={this.tele} ref={(c) => {
         this.AppScreen1 = c
       }} />
     )

@@ -5,6 +5,8 @@ import {TouchableOpacity, View, Text, Modal} from 'react-native'
 import s from './styles'
 
 const IncomingCallModal = ({call, onAnswerPress, onDeclinePress}) => {
+  console.log("!!!IncomingCallModal",call);
+
   if (!call) {
     return null
   }

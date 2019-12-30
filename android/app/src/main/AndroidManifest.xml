@@ -91,7 +91,7 @@
 <!-- DIALER -->
 
         <service
-            android:name=".CallService"
+            android:name=".TeleService"
             android:permission="android.permission.BIND_INCALL_SERVICE"
             >
             <meta-data

@@ -22,7 +22,25 @@ export default class Tele extends Component {
 
 
 
+    /*
+    export function hangupCall(call) {
+      return async function (dispatch, getState) {
+        const endpoint = getState().pjsip.endpoint
+        endpoint.hangupCall(call)
+      }
+    }
+    */
+
+
   };
+
+    //outgoing
+    hangupCall=(call)=>{this.tEndpoint.hangupCall(call)};  
+
+    //incoming
+    answerCall=(call)=>{this.tEndpoint.answerCall(call)};
+    declineCall=(call)=>{this.tEndpoint.declineCall(call)};
+
 /*
   async componentDidMount() {
     Rec=this.tEndpoint.Rec;

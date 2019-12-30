@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NativeModules } from 'react-native'
 import { EventEmitter } from 'events'
 
 import Call from './call'
@@ -31,12 +32,35 @@ export default class TeleEndpoint extends EventEmitter {
     };
   }
 
+      //outgoing
+      declineCall=(call)=>{
+        NativeModules.TeleModule.declineCall()};
+
+      //incoming
+      answerCall=(call)=>{ NativeModules.TeleModule.answerCall()};
+      hangupCall=(call)=>{ NativeModules.TeleModule.hangupCall()};
+
+      /*
+      hangupCall(call) {
+        // TODO: Add possibility to pass code and reason for hangup.
+        return new Promise((resolve, reject) => {
+            NativeModules.PjSipModule.hangupCall(call.getId(), (successful, data) => {
+                if (successful) {
+                    resolve(data);
+                } else {
+                    reject(data);
+                }
+            });
+        });
+    }*/
+
+
   //async componentDidMount() {
   Rec = async (data) => {
     console.log("Rec!!!", data);
 
-    if (data.action === 'CallService') {
-      console.log("->CallService");
+    if (data.action === 'TeleService') {
+      console.log("->TeleService");
       if (data.extra1s === 'onCallAdded') {
         console.log("->onCallAdded");
         this.currentCall=new Call({remoteUri:data.extra3s,creationTime:data.extra1l});
@@ -63,10 +87,11 @@ export default class TeleEndpoint extends EventEmitter {
         }
         if (data.extra1i === STATE_ACTIVE) {
           this.currentCall.connectTime=data.extra2l;
-          this.currentCall.state='PJSIP_SC_OK';
+          this.currentCall.state='PJSIP_INV_STATE_CONFIRMED';
         }
         if (data.extra1i === STATE_DISCONNECTED) {
           this.currentCall.state='PJSIP_INV_STATE_DISCONNECTED';
+          this._lastReason='PJSIP_SC_OK';
         }
 
         if (data.extra1s === 'onCallAdded') {
