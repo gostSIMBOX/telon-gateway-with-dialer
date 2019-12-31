@@ -83,12 +83,12 @@ public class TeleService extends InCallService {
 
         int direction;
 
-        if (android.os.Build.VERSION.SDK_INT >= 29) {
-            direction = details.getCallDirection();
+        //if (android.os.Build.VERSION.SDK_INT >= 29) {
+        //    direction = details.getCallDirection();
 
-        } else {
+        //} else {
             direction = 0;
-        }
+        //}
 
         sendHeadless("TeleService", "onCallAdded", name, num, state, direction, creationTimeMillis, 0);
 

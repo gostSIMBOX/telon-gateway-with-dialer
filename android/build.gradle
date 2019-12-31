@@ -4,8 +4,8 @@ buildscript {
     ext {
         buildToolsVersion = "29.0.0" // 28.0.3
         minSdkVersion = 16
-        compileSdkVersion = 29 //28
-        targetSdkVersion = 29  //28
+        compileSdkVersion = 28 //28
+        targetSdkVersion = 24  //28
     }
     repositories {
         google()

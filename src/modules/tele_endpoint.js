@@ -9,6 +9,7 @@ const STATE_RINGING = 2;
 const STATE_DIALING = 1;
 const STATE_ACTIVE = 4;
 const STATE_DISCONNECTED = 7;
+const STATE_DISCONNECTING = 10;
 
 /*   
     STATE_DISCONNECTING 10
@@ -65,44 +66,67 @@ export default class TeleEndpoint extends EventEmitter {
         console.log("->onCallAdded");
         this.currentCall=new Call({remoteUri:data.extra3s,creationTime:data.extra1l});
         this.currentCall.state='PJSIP_INV_STATE_NULL';
+        this.currentCall._state=this.currentCall.state;
       }
 
-      if (data.extra1s === 'onCallRemoved') {
-        this.currentCall=null;
-        this.emit("call_terminated", this.currentCall);
-      }
 
+      if (this.currentCall!=null)
       if ((data.extra1s === 'onStateChanged')||(data.extra1s === 'onCallAdded')) {
         if (data.extra1i === STATE_CONNECTING) {
           this.currentCall.state='PJSIP_INV_STATE_CALLING';
+          this.currentCall._state=this.currentCall.state;
           this.currentCall.incoming=false;
         }
         if (data.extra1i === STATE_RINGING) {
           this.currentCall.state='PJSIP_INV_STATE_INCOMING';
+          this.currentCall._state=this.currentCall.state;
           this.currentCall.incoming=true;
         }
 
         if (data.extra1i === STATE_DIALING) {
           this.currentCall.state='PJSIP_INV_STATE_EARLY';
+          this.currentCall._state=this.currentCall.state;
         }
         if (data.extra1i === STATE_ACTIVE) {
           this.currentCall.connectTime=data.extra2l;
           this.currentCall.state='PJSIP_INV_STATE_CONFIRMED';
+          this.currentCall._state=this.currentCall.state;
         }
         if (data.extra1i === STATE_DISCONNECTED) {
           this.currentCall.state='PJSIP_INV_STATE_DISCONNECTED';
+          this.currentCall._state=this.currentCall.state;
+          this._lastReason='PJSIP_SC_OK';
+        }
+        if (data.extra1i === STATE_DISCONNECTING) {
+          //TODO
+          this.currentCall.state='PJSIP_INV_STATE_DISCONNECTED';
+          this.currentCall._state=this.currentCall.state;
           this._lastReason='PJSIP_SC_OK';
         }
 
-        if (data.extra1s === 'onCallAdded') {
-          console.log("->onCallAdded->emit");
-          this.emit("call_received", this.currentCall);
-        }  
+
 
       }
+
+        if (data.extra1s === 'onCallAdded') {
+          console.log("tEndpoint.emit.onCallAdded");
+          this.emit("call_received", this.currentCall);
+        }  
+        
+      if (data.extra1s === 'onCallRemoved') {
+        console.log("tEndpoint.emit.onCallRemoved");
+        this.currentCall=null;
+        this.emit("call_terminated", this.currentCall);
+      }
+
+      if (data.extra1s === 'onStateChanged') {
+        console.log("tEndpoint.emit.onStateChanged");
+        this.emit("call_changed", this.currentCall);
+      }
+
     }
 
-  }
+   }
 
 }
 

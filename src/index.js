@@ -26,8 +26,10 @@ export default class Root extends Component {
 
 
   async componentDidMount() {
-    //request(PERMISSIONS.ANDROID.READ_CALL_LOG).then(result => {console.log("READ_CALL_LOG");});
-    //request(PERMISSIONS.ANDROID.READ_PHONE_STATE).then(result => {console.log("READ_PHONE_STATE");});
+    request(PERMISSIONS.ANDROID.READ_CALL_LOG).then(result => {console.log("READ_CALL_LOG");});
+    request(PERMISSIONS.ANDROID.READ_PHONE_STATE).then(result => {console.log("READ_PHONE_STATE");});
+    
+    
     this.tele.parent = this;
     Rec = this.tele.Rec;
 
@@ -49,9 +51,15 @@ export default class Root extends Component {
   onCallTerminated = (call) => {
     console.log("index->onCallTerminated");
     //this.AppScreen1.setState({ call: call });
+    //HACK
+    call=null;
     this.AppScreen1.setState({ call: call });
   }
 
+  onCallChanged = (call) => {
+    console.log("index.onCallChanged");
+    this.AppScreen1.setState({ call: call });
+  }
 
 
   render() {

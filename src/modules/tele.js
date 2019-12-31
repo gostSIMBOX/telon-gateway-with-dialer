@@ -8,19 +8,22 @@ export default class Tele extends Component {
     this.Rec=this.tEndpoint.Rec;
 
     this.tEndpoint.on("call_received", (call) => {
-      console.log("call_received", call);
+      console.log("tele.call_received", call);
       //dispatch(onCallReceived(call));
       //dispatch({type: CALL_RECEIVED, call});
       this.parent.onCallReceived(call);
     });
 
     this.tEndpoint.on("call_terminated", (call) => {
-      //console.log("call_terminated", call);
+      console.log("tele.call_terminated", call);
       //dispatch({type: CALL_TERMINATED, call});
       this.parent.onCallTerminated(call);
     });
 
-
+    this.tEndpoint.on("call_changed", (call) => {
+      console.log("tele.call_changed", call);
+      this.parent.onCallChanged(call);
+    });
 
     /*
     export function hangupCall(call) {

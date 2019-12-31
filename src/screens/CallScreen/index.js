@@ -141,6 +141,7 @@ class CallScreen extends Component {
  
 
    UNSAFE_componentWillReceiveProps(nextProps) {
+    !!!INIT // отвечает за новый звонок и иотрисовку с нуля. возможно в анимации - брингбэк
     console.log("CallScreen->new_componentWillReceiveProps(nextProps)"); 
     console.log("nextProps",nextProps);
     
@@ -157,12 +158,16 @@ class CallScreen extends Component {
     //console.log("###",nextProps.call.incoming);
   
     this.setState({call:nextProps.call});
+    console.log("nextProps.call.getState()",nextProps.call.getState());
 
     if (nextProps.call.getState() === "PJSIP_INV_STATE_INCOMING") {
       this.setState({incomingCall:nextProps.call});
+      console.log("INCOMING");
     } else {
       this.setState({incomingCall:null});
+      console.log("NOT INCOMING MODAL");
     }
+    
     return;
 
     //!!!

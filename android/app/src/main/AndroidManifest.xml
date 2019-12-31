@@ -107,11 +107,14 @@
 
 <!-- REC -->
 <service android:name=".MainService" />
-<receiver android:name=".MainReceiver">
+<receiver android:name=".MainReceiver" android:enabled="true"
+            android:exported="false" >
+  <!--
   <intent-filter android:priority="0">
     <action android:name="android.intent.action.PHONE_STATE" />
     <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
   </intent-filter>
+  -->
 </receiver>
 <!-- /REC -->
 
@@ -119,6 +122,7 @@
 
 
 <!-- pj sip -->
+<!--
     <service
         android:name="com.carusto.ReactNativePjSip.PjSipService"
         android:enabled="true"
@@ -129,6 +133,7 @@
           <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
         </intent-filter>
       </receiver>
+-->
 <!-- pj sip -->
 
     </application>
