@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {Animated, View, Text, Dimensions} from 'react-native'
+import { Animated, View, Text, Dimensions } from 'react-native'
 import * as Navigation from '../../modules/navigation'
 //import * as PjSip from '../../modules/pjsip'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import LinearGradient from 'react-native-linear-gradient'
 import * as CallAnimation from './anim'
@@ -28,8 +28,8 @@ class CallScreen extends Component {
   constructor(props) {
     super(props)
 
-    const {height: screenHeight, width: screenWidth} = Dimensions.get('window')
-    
+    const { height: screenHeight, width: screenWidth } = Dimensions.get('window')
+
     let call = this.props.call
 
     if (call instanceof Promise) {
@@ -73,8 +73,7 @@ class CallScreen extends Component {
 
     this._onCallAnswer = this.onCallAnswer.bind(this)
     //this._onCallHangup = this.onCallHangup.bind(this)
-    this._onCallHangup = () =>
-    {
+    this._onCallHangup = () => {
       console.log("_onCallHangup");
       console.log(this.tele);
       this.tele.hangupCall(call);
@@ -108,14 +107,12 @@ class CallScreen extends Component {
     //this._onIncomingCallAnswer = this.onIncomingCallAnswer.bind(this)
     //this._onIncomingCallDecline = this.onIncomingCallDecline.bind(this)
 
-    this._onIncomingCallAnswer = () =>
-    {
+    this._onIncomingCallAnswer = () => {
       console.log("_onIncomingCallAnswer");
       console.log(this.tele);
       this.tele.answerCall(call);
     }
-    this._onIncomingCallDecline = () =>
-    {
+    this._onIncomingCallDecline = () => {
       console.log("_onIncomingCallDecline");
       console.log(this.tele);
       this.tele.declineCall(call);
@@ -123,7 +120,7 @@ class CallScreen extends Component {
 
 
     //this.new_componentWillReceiveProps(props);
-    this.tele=this.props.tele;
+    this.tele = this.props.tele;
   }
 
   /*
@@ -133,46 +130,55 @@ class CallScreen extends Component {
     //componentWillReceiveProps1(prevProps);
   }*/
 
-/*  
-  getDerivedStateFromProps(nextProps, prevState){
-    console.log("getDerivedStateFromProps(nextProps) ",nextProps);
-    this.new_componentWillReceiveProps(nextProps);
- }*/
- 
+  /*  
+    getDerivedStateFromProps(nextProps, prevState){
+      console.log("getDerivedStateFromProps(nextProps) ",nextProps);
+      this.new_componentWillReceiveProps(nextProps);
+   }*/
 
-   UNSAFE_componentWillReceiveProps(nextProps) {
-    !!!INIT // отвечает за новый звонок и иотрисовку с нуля. возможно в анимации - брингбэк
-    console.log("CallScreen->new_componentWillReceiveProps(nextProps)"); 
-    console.log("nextProps",nextProps);
-    
-    this.tele=nextProps.tele;
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    //!!!INIT // отвечает за новый звонок и иотрисовку с нуля. возможно в анимации - брингбэк
+    console.log("CallScreen->new_componentWillReceiveProps(nextProps)");
+    console.log("nextProps", nextProps);
+
+    let init = false;
+
+    let calls_length=0;
+
+    this.tele = nextProps.tele;
     //this.state.incomingCall = nextProps.call;
     //return;
     // END HERE
     //this.state.call = nextProps.call;
-    if(nextProps.call==null) 
-    {
-      this.setState({call:null,incomingCall:null});
+    if (nextProps.call == null) {
+      this.setState({ call: null, incomingCall: null });
       return;
     }
+
+    calls_length=1;
+    if ((nextProps.call != null) && (this.state.call == null)) init = true;
     //console.log("###",nextProps.call.incoming);
-  
-    this.setState({call:nextProps.call});
-    console.log("nextProps.call.getState()",nextProps.call.getState());
+
+    this.setState({ call: nextProps.call });
+    console.log("nextProps.call.getState()", nextProps.call.getState());
 
     if (nextProps.call.getState() === "PJSIP_INV_STATE_INCOMING") {
-      this.setState({incomingCall:nextProps.call});
+      this.setState({ incomingCall: nextProps.call });
       console.log("INCOMING");
     } else {
-      this.setState({incomingCall:null});
+      this.setState({ incomingCall: null });
       console.log("NOT INCOMING MODAL");
     }
-    
+
+    //if (init) {
+      //CallAnimation.animateCallState({ ...this.state, totalCalls: calls_length }, call)
+    //}
     return;
 
     //!!!
     // Remember latest state of current call, to be able display call information after removal from state
-    
+
     if ((!this.state.call && nextProps.call && !(nextProps.call instanceof Promise)) ||
       (this.state.call && nextProps.calls.hasOwnProperty(this.state.call.getId()))) {
       const prevCall = this.state.call ? this.state.call : nextProps.call
@@ -221,8 +227,8 @@ class CallScreen extends Component {
           }, call)
         })
       } else {
-        CallAnimation.animateCallState({...this.state, totalCalls: calls.length}, call)
-        this.setState({call, incomingCall})
+        CallAnimation.animateCallState({ ...this.state, totalCalls: calls.length }, call)
+        this.setState({ call, incomingCall })
       }
 
       if (call.getState() === "PJSIP_INV_STATE_DISCONNECTED") {
@@ -246,7 +252,7 @@ class CallScreen extends Component {
   }
 
   onInitializationError(reason) {
-    this.setState({error: reason})
+    this.setState({ error: reason })
     this.props.onCallEnd && this.props.onCallEnd(this.state.call)
   }
 
@@ -286,27 +292,27 @@ class CallScreen extends Component {
     // TODO: Put local call on hold while typing digits
 
     console.log("onCallTransferPress")
-    this.setState({isTransferModalVisible: true})
+    this.setState({ isTransferModalVisible: true })
   }
 
   onCallTransferClosePress() {
-    this.setState({isTransferModalVisible: false})
+    this.setState({ isTransferModalVisible: false })
   }
 
   onCallAttendantTransferPress(destinationCall) {
-    this.setState({isTransferModalVisible: false})
+    this.setState({ isTransferModalVisible: false })
     this.props.onCallAttendantTransfer && this.props.onCallAttendantTransfer(this.state.call, destinationCall)
   }
 
   onCallBlindTransferPress(value) {
     if (value.length > 0) {
-      this.setState({isTransferModalVisible: false})
+      this.setState({ isTransferModalVisible: false })
       this.props.onCallBlindTransfer && this.props.onCallBlindTransfer(this.state.call, value)
     }
   }
 
   onCallDtmfPress() {
-    this.setState({isDtmfModalVisible: true})
+    this.setState({ isDtmfModalVisible: true })
   }
 
   onCallDtmfKeyPress(key) {
@@ -314,7 +320,7 @@ class CallScreen extends Component {
   }
 
   onCallDtmfModalClosePress() {
-    this.setState({isDtmfModalVisible: false})
+    this.setState({ isDtmfModalVisible: false })
   }
 
   onCallHoldPress() {
@@ -327,40 +333,40 @@ class CallScreen extends Component {
 
   onCallAddPress() {
     // TODO: Put local call on hold while typing digits
-    this.setState({isAddModalVisible: true})
+    this.setState({ isAddModalVisible: true })
   }
 
   onCallAddClosePress() {
-    this.setState({isAddModalVisible: false})
+    this.setState({ isAddModalVisible: false })
   }
 
   onCallAddSubmitPress(destination) {
-    this.setState({isAddModalVisible: false})
+    this.setState({ isAddModalVisible: false })
     this.props.onCallAdd && this.props.onCallAdd(this.state.call, destination)
   }
 
   onCallRedirectPress() {
-    this.setState({isRedirectModalVisible: true})
+    this.setState({ isRedirectModalVisible: true })
   }
 
   onCallRedirectClosePress() {
-    this.setState({isRedirectModalVisible: false})
+    this.setState({ isRedirectModalVisible: false })
   }
 
   onCallRedirectSubmitPress(destination) {
     if (destination.length > 0) {
-      this.setState({isRedirectModalVisible: false})
+      this.setState({ isRedirectModalVisible: false })
       this.props.onCallRedirect && this.props.onCallRedirect(this.state.call, destination)
     }
   }
 
   onIncomingCallAnswer() {
-    this.setState({incomingCall: null})
+    this.setState({ incomingCall: null })
     this.props.onIncomingCallAnswer && this.props.onIncomingCallAnswer(this.state.incomingCall)
   }
 
   onIncomingCallDecline() {
-    this.setState({incomingCall: null})
+    this.setState({ incomingCall: null })
     this.props.onIncomingCallDecline && this.props.onIncomingCallDecline(this.state.incomingCall)
   }
 
@@ -378,7 +384,7 @@ class CallScreen extends Component {
             key={"parallel-" + call.getId()}
             call={call}
             onPress={this.props.onCallSelect}
-            style={{marginTop: i === 0 ? 0 : 5}}
+            style={{ marginTop: i === 0 ? 0 : 5 }}
           />
         ))
       }
@@ -387,7 +393,7 @@ class CallScreen extends Component {
     }
 
     return (
-      <View style={{position: 'absolute', top: 5, width: this.state.screenWidth}}>
+      <View style={{ position: 'absolute', top: 5, width: this.state.screenWidth }}>
         {result}
       </View>
     )
@@ -416,23 +422,23 @@ class CallScreen extends Component {
 
   render() {
     console.log("CallScreen->Render");
-    console.log("this.state.call",this.state.call);
+    console.log("this.state.call", this.state.call);
 
 
     const call = this.state.call;
-    const calls = (call?{call1:call}:{}); //this.props.calls;
+    const calls = (call ? { call1: call } : {}); //this.props.calls;
 
 
     console.log(this.state.incomingCall);
 
-    
+
     if (this.state.error) {
       return this.renderError()
     }
 
     //return this.renderCallWait()
 
-    
+
     if (!call) {
       return this.renderCallWait()
     }
@@ -441,11 +447,11 @@ class CallScreen extends Component {
     if (this.props.isScreenLocked === true) {
       // TODO: Use overlay with absolute position for better performance
       return (
-        <View style={{flex: 1, backgroundColor: "#000"}}/>
+        <View style={{ flex: 1, backgroundColor: "#000" }} />
       )
     }
 
-    
+
     return (
       <LinearGradient colors={['#2a5743', '#14456f']} style={cs.max}>
         <View style={cs.max}>
@@ -459,7 +465,7 @@ class CallScreen extends Component {
               width: this.state.screenWidth
             }}
           >
-            <CallInfo call={call}/>
+            <CallInfo call={call} />
           </Animated.View>
 
           <Animated.View
@@ -486,7 +492,7 @@ class CallScreen extends Component {
               width: this.state.screenWidth
             }}
           >
-            <CallState call={call}/>
+            <CallState call={call} />
           </Animated.View>
 
           <Animated.View
@@ -501,7 +507,7 @@ class CallScreen extends Component {
           >
             <CallActions
               call={call}
-              style={{flex: 1}}
+              style={{ flex: 1 }}
               onAddPress={this._onCallAddPress}
               onChatPress={this._onCallChatPress}
               onMutePress={this._onCallMutePress}
@@ -534,7 +540,7 @@ class CallScreen extends Component {
 
           <DialerModal
             actions={[
-              {icon: "call", text: "Call", callback: this._onCallAddSubmitPress}
+              { icon: "call", text: "Call", callback: this._onCallAddSubmitPress }
             ]}
             visible={this.state.isAddModalVisible}
             onRequestClose={this._onCallAddClosePress}
@@ -542,7 +548,7 @@ class CallScreen extends Component {
 
           <DialerModal
             actions={[
-              {icon: "blind-transfer", text: "Redirect", callback: this._onCallRedirectSubmitPress}
+              { icon: "blind-transfer", text: "Redirect", callback: this._onCallRedirectSubmitPress }
             ]}
             theme="dark"
             visible={this.state.isRedirectModalVisible}
@@ -572,7 +578,7 @@ class CallScreen extends Component {
         </View>
       </LinearGradient>
     )
-    
+
   }
 }
 
@@ -629,7 +635,7 @@ function actions(dispatch, getState) {
               // Open active call once current call ends.
               for (const id in calls) {
                 if (calls.hasOwnProperty(id)) {
-                  return dispatch(Navigation.goAndReplace({name: 'call', call: calls[id]}))
+                  return dispatch(Navigation.goAndReplace({ name: 'call', call: calls[id] }))
                 }
               }
 
@@ -687,10 +693,10 @@ function actions(dispatch, getState) {
     },
     onCallAnswer(call) {
       //dispatch(PjSip.answerCall(call))
-      
+
     },
     onCallSelect: (call) => {
-      dispatch(Navigation.goAndReplace({name: 'call', call}))
+      dispatch(Navigation.goAndReplace({ name: 'call', call }))
     },
     onCallAdd: (call, destination) => {
       dispatch(PjSip.makeCall(destination))
@@ -699,7 +705,7 @@ function actions(dispatch, getState) {
       //dispatch(PjSip.answerCall(call))
       console.log("onIncomingCallAnswer");
       tele.answerCall(call);
-      dispatch(Navigation.goAndReplace({name: 'call', call}))
+      dispatch(Navigation.goAndReplace({ name: 'call', call }))
     },
     onIncomingCallDecline(call) {
       console.log("onIncomingCallDecline");

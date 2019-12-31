@@ -44,7 +44,9 @@ export default class Root extends Component {
 
   onCallReceived = (call) => {
     console.log("index->onCallReceived");
-    this.AppScreen1.setState({ call: call },invokeApp);
+    //this.AppScreen1.setState({ call: call },invokeApp);
+    this.AppScreen1.setState({ call: call });
+    
     //invokeApp();
   }
 

@@ -1,11 +1,33 @@
 package one.telefon;
 
+
 import one.telefon.MainService;
 import one.telefon.TeleManager;
+//import one.telefon.utils.ArgumentUtils;
+
 
 import android.os.Bundle;
 
 import android.util.Log;
+
+
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.media.AudioManager;
+import android.net.wifi.WifiManager;
+import android.os.Build;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.IBinder;
+import android.os.Looper;
+import android.os.PowerManager;
+import android.os.Process;
+import android.os.Bundle;
+import android.telephony.TelephonyManager;
+
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +42,100 @@ import android.telecom.InCallService;
 public class TeleService extends InCallService {
     private static String LOG_TAG = "LOG_telefon.one[TeleService]";
     
+    private boolean mInitialized;
+
+    private HandlerThread mWorkerThread;
+
+    private Handler mHandler;
+
+    private AudioManager mAudioManager;
+
+    private PowerManager mPowerManager;
+
+    private PowerManager.WakeLock mIncallWakeLock;
+
+    private WifiManager mWifiManager;
+
+    private WifiManager.WifiLock mWifiLock;
+
+/*
+    @Override
+    public IBinder onBind(Intent intent) {
+        Log.d(LOG_TAG, "onBind()");        
+        init(intent,0,0);
+        return null;
+    }
+*/
+    @Override
+    public int onStartCommand(final Intent intent, int flags, int startId) {
+        Log.d(LOG_TAG, "onStartCommand()");
+        //init(intent, flags, startId);
+        return 1;
+    }
+
+    private int init(final Intent intent, int flags, int startId)
+    {
+        Log.d(LOG_TAG, "init");
+        if (!mInitialized) {
+            Log.d(LOG_TAG, "!mInitialized");
+            //if (intent != null && intent.hasExtra("service")) {
+            //    mServiceConfiguration = ServiceConfigurationDTO.fromMap((Map) intent.getSerializableExtra("service"));
+            //}
+
+            mWorkerThread = new HandlerThread(getClass().getSimpleName(), Process.THREAD_PRIORITY_FOREGROUND);
+            mWorkerThread.setPriority(Thread.MAX_PRIORITY);
+            mWorkerThread.start();
+            mHandler = new Handler(mWorkerThread.getLooper());
+            //mEmitter = new PjSipBroadcastEmiter(this);
+            
+            mAudioManager = (AudioManager) getApplicationContext().getSystemService(AUDIO_SERVICE);
+            mPowerManager = (PowerManager) getApplicationContext().getSystemService(POWER_SERVICE);
+            mWifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+            mWifiLock = mWifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, this.getPackageName()+"-wifi-call-lock");
+            mWifiLock.setReferenceCounted(false);
+            /*
+            mTelephonyManager = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+            mGSMIdle = mTelephonyManager.getCallState() == TelephonyManager.CALL_STATE_IDLE;
+            IntentFilter phoneStateFilter = new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED);
+            registerReceiver(mPhoneStateChangedReceiver, phoneStateFilter);
+            */
+            mInitialized = true;
+
+            job(new Runnable() {
+                @Override
+                public void run() {
+                    load();
+                }
+            });
+        }
+
+        if (intent != null) {
+            job(new Runnable() {
+                @Override
+                public void run() {
+                    handle(intent);
+                }
+            });
+        }
+
+        return START_NOT_STICKY;
+    }
+
+    private void job(Runnable job) {
+        //mHandler.post(job);
+    }
+
+    private void load() {
+    }
+
+    private void handle(Intent intent) {
+        if (intent == null || intent.getAction() == null) {
+            return;
+        }
+
+        //Log.d(LOG_TAG, "Handle \""+ intent.getAction() +"\" action ("+ ArgumentUtils.dumpIntentExtraParameters(intent) +")");
+        Log.d(LOG_TAG, "Handle \""+ intent.getAction() +"\" action ");
+    }
 
     /*
     private boolean isAppOnForeground(Context context) {
@@ -42,6 +158,54 @@ public class TeleService extends InCallService {
         return false;
     }
     */
+
+    private void showApp() {    
+        Log.d(LOG_TAG, "showApp()");    
+        // Automatically start application when incoming call received.
+        
+        /*
+        PowerManager.WakeLock wl = mPowerManager.newWakeLock(
+            PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE | PowerManager.FULL_WAKE_LOCK,
+            "incoming_call"
+        );
+        wl.acquire(10000);
+        */
+        
+
+        Boolean mAppHidden=true;
+        if (mAppHidden) {
+            try {
+                String ns = getApplicationContext().getPackageName();
+                String cls = ns + ".MainActivity";
+
+                Intent intent = new Intent(getApplicationContext(), Class.forName(cls));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.EXTRA_DOCK_STATE_CAR);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                intent.putExtra("foreground", true);
+
+                startActivity(intent);
+            } catch (Exception e) {
+                Log.w(LOG_TAG, "Failed to open application on received call", e);
+            }
+        }
+
+        job(new Runnable() {
+            @Override
+            public void run() {
+                // Brighten screen at least 10 seconds
+                PowerManager.WakeLock wl = mPowerManager.newWakeLock(
+                    PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE | PowerManager.FULL_WAKE_LOCK,
+                    "incoming_call"
+                );
+                wl.acquire(10000);
+
+            }
+        });
+
+        
+    }
+
+
 
     private void sendHeadless(String action, String extra1s, String extra2s, String extra3s, int extra1i, int extra2i,
             long extra1l, long extra2l) {
@@ -72,17 +236,27 @@ public class TeleService extends InCallService {
         
         TeleManager.updateCall(call);
 
+        showApp();
+
         Call.Details details = call.getDetails();
 
         String num = details.getHandle().toString();
         String name = details.getCallerDisplayName();
 
-        long creationTimeMillis = details.getCreationTimeMillis();
+        long creationTimeMillis;
+        
+        //if (android.os.Build.VERSION.SDK_INT >= 26) {
+        //if (Build.VERSION.SDK_INT >= 26) {
+        //    creationTimeMillis = details.getCreationTimeMillis();
+        //} else {
+            creationTimeMillis=0;
+        //}
 
         int state = call.getState();
 
         int direction;
 
+        
         //if (android.os.Build.VERSION.SDK_INT >= 29) {
         //    direction = details.getCallDirection();
 
@@ -121,6 +295,7 @@ public class TeleService extends InCallService {
                 sendHeadless("TeleService", "onStateChanged", "", "", state, 0, 0, connectTimeMillis);
             }
 
+            /* API
             @Override
             public void onConnectionEvent(Call call, String event, Bundle extras) {
                 Log.d(LOG_TAG, "onConnectionEvent event=" + event);
@@ -131,6 +306,8 @@ public class TeleService extends InCallService {
                 super.onConnectionEvent(call, event, extras);
                 sendHeadless("TeleService", "onConnectionEvent", event, "", 0, 0, 0, 0);
             }
+            
+
 
             @Override
             public void onRttRequest(Call call, int id) {
@@ -138,6 +315,7 @@ public class TeleService extends InCallService {
                 super.onRttRequest(call, id);
                 sendHeadless("TeleService", "onRttRequest", "", "", id, 0, 0, 0);
             }
+            */
 
         });
 

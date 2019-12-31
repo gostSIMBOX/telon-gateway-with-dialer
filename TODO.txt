@@ -1,0 +1,3 @@
+call.js -> call duration since connect (not connectduration)
+bring to front on call WAKE_LOCK?
+howto API check in gava, not IF. Not compiled with gradle and no symbol error

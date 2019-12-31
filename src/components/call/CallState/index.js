@@ -23,6 +23,8 @@ export default class CallState extends Component {
   }
 
   onTick() {
+    console.log("onTick");
+    //console.log(this.statusTextInput);
     if (this.props.call.getState() === "PJSIP_INV_STATE_CONFIRMED" && this.statusTextInput) {
       this.statusTextInput.setNativeProps({text: this.props.call.getFormattedConnectDuration()})
     }

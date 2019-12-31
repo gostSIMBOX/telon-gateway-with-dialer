@@ -114,6 +114,10 @@ export default class Call {
      * @returns {int}
      */
     getConnectDuration() {
+        console.log("getConnectDuration()");
+        //console.log(this._state);
+        
+
         if (this._connectDuration < 0 || this._state == "PJSIP_INV_STATE_DISCONNECTED") {
             return this._connectDuration;
         }
@@ -121,7 +125,11 @@ export default class Call {
         let time = Math.round(new Date().getTime() / 1000);
         let offset = time - this._constructionTime;
 
-        return this._connectDuration + offset;
+        console.log(this._connectDuration);
+        console.log(offset);
+        
+        return offset; //-connect duration
+        //return this._connectDuration + offset;
     }
 
     /**
