@@ -23,7 +23,9 @@ const STATE_DISCONNECTING = 10;
 export default class TeleEndpoint extends EventEmitter {
 
   constructor() {
+    console.log("TeleEndpoint.constructor");
     super();
+
     //this.call=new Call();
     
     this.currentCall=null;
@@ -31,8 +33,16 @@ export default class TeleEndpoint extends EventEmitter {
     this.state = {
       //DeviceEventEmitter.addListener('pjSipCallTerminated', this._onCallTerminated.bind(this));
     };
+    this.getCurrentCall();
+
   }
 
+      
+      getCurrentCall=()=>{
+        console.log("getCurrentCall()");
+        NativeModules.TeleModule.getCurrentCall()
+      };
+          
       //outgoing
       declineCall=(call)=>{
         NativeModules.TeleModule.declineCall()};
@@ -69,9 +79,13 @@ export default class TeleEndpoint extends EventEmitter {
         this.currentCall._state=this.currentCall.state;
       }
 
+      if ((this.currentCall==null)&&((data.extra1s === 'getCurrentCall'))&&(data.extra1i!=0))
+      {
+        this.currentCall=new Call({remoteUri:data.extra3s,creationTime:data.extra1l});
+      }
 
       if (this.currentCall!=null)
-      if ((data.extra1s === 'onStateChanged')||(data.extra1s === 'onCallAdded')) {
+      if ((data.extra1s === 'getCurrentCall')||(data.extra1s === 'onStateChanged')||(data.extra1s === 'onCallAdded')) {
         if (data.extra1i === STATE_CONNECTING) {
           this.currentCall.state='PJSIP_INV_STATE_CALLING';
           this.currentCall._state=this.currentCall.state;
@@ -119,8 +133,12 @@ export default class TeleEndpoint extends EventEmitter {
         this.emit("call_terminated", this.currentCall);
       }
 
-      if (data.extra1s === 'onStateChanged') {
+      if ((data.extra1s === 'onStateChanged')) {
         console.log("tEndpoint.emit.onStateChanged");
+        this.emit("call_changed", this.currentCall);
+      }
+      if ((data.extra1s === 'getCurrentCall')) {
+        console.log("tEndpoint.emit.getCurrentCall->call_changed");
         this.emit("call_changed", this.currentCall);
       }
 

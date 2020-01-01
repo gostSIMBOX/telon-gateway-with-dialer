@@ -32,7 +32,6 @@ import android.telephony.TelephonyManager;
 import android.content.Context;
 import android.content.Intent;
 
-import com.facebook.react.HeadlessJsTaskService;
 
 import android.telecom.Call;
 import android.telecom.InCallService;
@@ -63,7 +62,8 @@ public class TeleService extends InCallService {
     public IBinder onBind(Intent intent) {
         Log.d(LOG_TAG, "onBind()");        
         init(intent,0,0);
-        return null;
+        //return null;
+        return super(intent);
     }
 */
     @Override
@@ -207,73 +207,26 @@ public class TeleService extends InCallService {
 
 
 
-    private void sendHeadless(String action, String extra1s, String extra2s, String extra3s, int extra1i, int extra2i,
-            long extra1l, long extra2l) {
-        //if (!isAppOnForeground((context))) {
-            Context context = getApplicationContext();
-            Intent recIntent = new Intent(context, MainService.class);
 
-            recIntent.putExtra("action", action);
-            recIntent.putExtra("extra1s", extra1s);
-            recIntent.putExtra("extra2s", extra2s);
-            recIntent.putExtra("extra3s", extra3s);
-
-            recIntent.putExtra("extra1i", extra1i);
-            recIntent.putExtra("extra2i", extra2i);
-
-            recIntent.putExtra("extra1l", extra1l);
-            recIntent.putExtra("extra2l", extra2l);
-
-            context.startService(recIntent);
-            HeadlessJsTaskService.acquireWakeLockNow(context);
-        //}
-    }
 
     @Override
     public void onCallAdded(Call call) {
         Log.d(LOG_TAG, "onCallAdded");
-        super.onCallAdded(call);
-        
-        TeleManager.updateCall(call);
 
         showApp();
 
-        Call.Details details = call.getDetails();
-
-        String num = details.getHandle().toString();
-        String name = details.getCallerDisplayName();
-
-        long creationTimeMillis;
-        
-        //if (android.os.Build.VERSION.SDK_INT >= 26) {
-        //if (Build.VERSION.SDK_INT >= 26) {
-        //    creationTimeMillis = details.getCreationTimeMillis();
-        //} else {
-            creationTimeMillis=0;
-        //}
-
-        int state = call.getState();
-
-        int direction;
-
-        
-        //if (android.os.Build.VERSION.SDK_INT >= 29) {
-        //    direction = details.getCallDirection();
-
-        //} else {
-            direction = 0;
-        //}
-
-        sendHeadless("TeleService", "onCallAdded", name, num, state, direction, creationTimeMillis, 0);
+        super.onCallAdded(call);        
+        TeleManager.updateCall(call,"onCallAdded");
 
         /* DisconnectCause getDisconnectCause() */
 
         call.registerCallback(new Call.Callback() {
             @Override
             public void onCallDestroyed(Call call) {
-                Log.d(LOG_TAG, "onCallAdded");
+                Log.d(LOG_TAG, "onCallDestroyed");
                 super.onCallDestroyed(call);
-                sendHeadless("TeleService", "onCallDestroyed", "", "", 0, 0, 0, 0);
+                TeleManager.updateCall(call,"onCallDestroyed");
+                //sendHeadless("TeleService", "onCallDestroyed", "", "", 0, 0, 0, 0);
             }
 
             @Override
@@ -281,18 +234,21 @@ public class TeleService extends InCallService {
                 Log.d(LOG_TAG, "onDetailsChanged " + call.getRemainingPostDialSequence() + ":"
                         + details.getCallerDisplayName());
                 super.onDetailsChanged(call, details);
-                String num = details.getHandle().toString();
-                String name = details.getCallerDisplayName();
-                sendHeadless("TeleService", "onDetailsChanged", name, num, 0, 0, 0, 0);
+                TeleManager.updateCall(call,"onDetailsChanged");
+
+                //String num = details.getHandle().toString();
+                //String name = details.getCallerDisplayName();
+                //sendHeadless("TeleService", "onDetailsChanged", name, num, 0, 0, 0, 0);
             }
 
             @Override
             public void onStateChanged(Call call, int state) {
                 Log.d(LOG_TAG, "onStateChanged state=" + state);
                 super.onStateChanged(call, state);
-                long connectTimeMillis = details.getConnectTimeMillis();
-
-                sendHeadless("TeleService", "onStateChanged", "", "", state, 0, 0, connectTimeMillis);
+                
+                TeleManager.updateCall(call,"onStateChanged");
+                //long connectTimeMillis = details.getConnectTimeMillis();
+                //sendHeadless("TeleService", "onStateChanged", "", "", state, 0, 0, connectTimeMillis);
             }
 
             /* API
@@ -326,10 +282,10 @@ public class TeleService extends InCallService {
         Log.w(LOG_TAG, "onCallRemoved");
         super.onCallRemoved(call);
 
-        TeleManager.updateCall(call);
+        TeleManager.updateCall(call,"onCallRemoved");
 
         // ADD: call.unregisterCallback(callCallback);
-        sendHeadless("TeleService", "onCallRemoved", "", "", 0, 0, 0, 0);
+        //sendHeadless("TeleService", "onCallRemoved", "", "", 0, 0, 0, 0);
     }
 
 }

@@ -1,7 +1,9 @@
 package one.telefon;
 
+import android.app.Service;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.Context;
 
 import android.util.Log;
 
@@ -15,10 +17,11 @@ public class TeleModule extends ReactContextBaseJavaModule {
     private static String LOG_TAG = "LOG_telefon.one[TeleModule]";
 
     //private static TeleBroadcastReceiver receiver;
+    public static ReactApplicationContext currentContext;
 
     public TeleModule(ReactApplicationContext context) {
         super(context);
-
+        currentContext=context;
         // Module could be started several times, but we have to register receiver only once.
         /*
         if (receiver == null) {
@@ -33,6 +36,12 @@ public class TeleModule extends ReactContextBaseJavaModule {
     @Override
     public String getName() {
         return "TeleModule";
+    }
+
+    @ReactMethod
+    public void getCurrentCall() {
+        Log.d(LOG_TAG, "getCurrentCall()"); 
+        TeleManager.getCurrentCall();
     }
 
     //incoming

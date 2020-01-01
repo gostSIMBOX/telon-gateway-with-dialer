@@ -3,6 +3,7 @@ import TeleEndpoint from './tele_endpoint'
 
 export default class Tele extends Component {
   constructor() {
+    console.log("tele.js.constructor")
     super();
     this.tEndpoint=new TeleEndpoint();
     this.Rec=this.tEndpoint.Rec;
@@ -44,10 +45,6 @@ export default class Tele extends Component {
     answerCall=(call)=>{this.tEndpoint.answerCall(call)};
     declineCall=(call)=>{this.tEndpoint.declineCall(call)};
 
-/*
-  async componentDidMount() {
-    Rec=this.tEndpoint.Rec;
-  }*/
 /*
   Rec = async (data) => {
     console.log("Rec",data);

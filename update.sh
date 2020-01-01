@@ -1,4 +1,4 @@
 git add .
 git pull
-git commit -a -m "auto"
+git commit -a -m "alpha"
 git push

@@ -13,6 +13,7 @@ import Call from './modules/call'
 
 export default class Root extends Component {
   constructor(props) {
+    console.log("src.index.constructor");
     super(props);
     this.tele = new Tele();
     //this.pjsip=new Pjsip();
@@ -28,7 +29,7 @@ export default class Root extends Component {
   async componentDidMount() {
     request(PERMISSIONS.ANDROID.READ_CALL_LOG).then(result => {console.log("READ_CALL_LOG");});
     request(PERMISSIONS.ANDROID.READ_PHONE_STATE).then(result => {console.log("READ_PHONE_STATE");});
-    
+    console.log("src.index.componentDidMount()");
     
     this.tele.parent = this;
     Rec = this.tele.Rec;
@@ -46,7 +47,7 @@ export default class Root extends Component {
     console.log("index->onCallReceived");
     //this.AppScreen1.setState({ call: call },invokeApp);
     this.AppScreen1.setState({ call: call });
-    
+
     //invokeApp();
   }
 
