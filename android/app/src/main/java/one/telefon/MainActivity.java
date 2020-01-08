@@ -52,55 +52,5 @@ public class MainActivity extends ReactActivity {
     return "telefon";
   }
 
-  /*
-   * Additional step: Ability to answer incoming call without Lock Screen
-   */
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
 
-    Window w = getWindow();
-    w.setFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED, WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
-
-    RNInvokeApp.sendEvent();
-  }
-
-  @Override
-  public void onStart() {
-    super.onStart();
-    offerReplacingDefaultDialer();
-  }
-
-  @Override
-  public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-    // RNImmediatePhoneCallPackage.onRequestPermissionsResult(requestCode,
-    // permissions, grantResults); // very important
-    // event callback
-    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-  }
-
-  /*
-   * не ясно public void onRequestPermissionsResult(int requestCode, @NonNull
-   * String permissions[], @NonNull int[] grantResult) { if(requestCode ==
-   * PERMISSIONS_REQUEST_ACCESS_CALL) { if(grantResult[0] ==
-   * PackageManager.PERMISSION_GRANTED) { callPerson(this.mobile_no); } } }
-   */
-
-  // for default dialer
-  private void offerReplacingDefaultDialer() {
-    Log.w("telefon.one-MainActivity", "offerReplacingDefaultDialer");
-    TelecomManager telecomManager = (TelecomManager) getSystemService(Context.TELECOM_SERVICE);
-
-    if (telecomManager.getDefaultDialerPackage() != getPackageName()) {
-      Log.w("telefon.one", "offerReplacingDefaultDialer->send intent");
-      Intent intent = new Intent(TelecomManager.ACTION_CHANGE_DEFAULT_DIALER);
-      intent.putExtra(TelecomManager.EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME, getPackageName());
-      startActivityForResult(intent, RC_DEFAULT_PHONE);
-      // startActivityForResult(intent, REQUEST_CODE_SET_DEFAULT_DIALER); //Different
-      // code
-      // Huawei/ honor : ??? manual ??? startActivityForResult(new
-      // Intent(android.provider.Settings.ACTION_SETTINGS), 0);
-
-    }
-  }
 }
