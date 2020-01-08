@@ -6,10 +6,13 @@ import { AppRegistry } from 'react-native';
 import App from './src';
 import { name as appName } from './app.json';
 
+import configureStore from './src/modules/configureStore'
+const store = configureStore()
 
-console.log("index start");
 AppRegistry.registerHeadlessTask('Rec', () => Rec);
-myApp= AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerHeadlessTask('TeleRec', () => require('./src/modules/event-handler.js').bind(null, store));
+
+AppRegistry.registerComponent(appName, () => App);
 
 
 

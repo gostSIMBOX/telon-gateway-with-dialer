@@ -31,11 +31,101 @@ export default class TeleEndpoint extends EventEmitter {
     this.currentCall=null;
 
     this.state = {
-      //DeviceEventEmitter.addListener('pjSipCallTerminated', this._onCallTerminated.bind(this));
     };
-    this.getCurrentCall();
+
+    //TODO ADD
+    DeviceEventEmitter.addListener('teleCallReceived', this._onCallReceived.bind(this));
+    DeviceEventEmitter.addListener('teleCallChanged', this._onCallChanged.bind(this));
+    DeviceEventEmitter.addListener('teleCallRemoved', this._onCallTerminated.bind(this));
+
+    //TODO REMOVE
+    //this.getCurrentCall();
 
   }
+
+      /**
+     * @fires Endpoint#call_received
+     * @private
+     * @param data {Object}
+     */
+    _onCallReceived(data) {
+      /**
+       * TODO
+       *
+       * @event Endpoint#call_received
+       * @property {Call} call
+       */
+      this.emit("call_received", new Call(data));
+  }
+
+    /**
+     * @fires Endpoint#call_changed
+     * @private
+     * @param data {Object}
+     */
+    _onCallChanged(data) {
+      /**
+       * TODO
+       *
+       * @event Endpoint#call_changed
+       * @property {Call} call
+       */
+      this.emit("call_changed", new Call(data));
+  }
+
+  /**
+   * @fires Endpoint#call_terminated
+   * @private
+   * @param data {Object}
+   */
+  _onCallTerminated(data) {
+      /**
+       * TODO
+       *
+       * @event Endpoint#call_terminated
+       * @property {Call} call
+       */
+      this.emit("call_terminated", new Call(data));
+  }
+
+
+    /**
+     * Returns a Promise that will be resolved once Tele module is initialized.
+     * Do not call any function while library is not initialized.
+     *
+     * @returns {Promise}
+     */
+    start(configuration) {
+      return new Promise(function(resolve, reject) {
+          NativeModules.TeleModule.start(configuration, (successful, data) => {
+              if (successful) {
+                  let calls = [];
+
+                  if (data.hasOwnProperty('calls')) {
+                      for (let d of data['calls']) {
+                          calls.push(new Call(d));
+                      }
+                  }
+
+                  let extra = {};
+
+                  for (let key in data) {
+                      if (data.hasOwnProperty(key)  && key != "calls") {
+                          extra[key] = data[key];
+                      }
+                  }
+
+                  resolve({
+                      calls,
+                      ...extra
+                  });
+              } else {
+                  reject(data);
+              }
+          });
+      });
+  }
+
 
       
       getCurrentCall=()=>{

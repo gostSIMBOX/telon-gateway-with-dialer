@@ -37,6 +37,8 @@ export default class Call {
             
         }
 
+        this.tele=true;
+
         this._id = id;
         this._callId = callId;
         this._accountId = accountId;
